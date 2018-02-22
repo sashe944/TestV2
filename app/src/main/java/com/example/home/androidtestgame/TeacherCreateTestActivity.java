@@ -1,15 +1,19 @@
 package com.example.home.androidtestgame;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -23,7 +27,7 @@ public class TeacherCreateTestActivity extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     ArrayList<String> items;
     ListView listViewQuestions;
-
+    Spinner sp_questionType;
     DatePickerDialog.OnDateSetListener dateSetListener;
 
     @Override
@@ -43,7 +47,20 @@ public class TeacherCreateTestActivity extends AppCompatActivity {
         items.add("На колко си ?");
         adapter = new ArrayAdapter<String>(this,R.layout.question_row,R.id.tv_question,items);
         listViewQuestions.setAdapter(adapter);
+        sp_questionType = findViewById(R.id.sp_question);
+        sp_questionType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                Intent intent = new Intent(TeacherCreateTestActivity.this,QuestionsPopupActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     View.OnClickListener onClickListenerFromDate = new View.OnClickListener() {
@@ -92,6 +109,5 @@ public class TeacherCreateTestActivity extends AppCompatActivity {
             };
         }
     };
-
 
 }

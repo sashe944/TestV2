@@ -9,13 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogInActivity"/>
+        <activity android:name=".LogInActivity" />
         <activity android:name=".RegisterActivity" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
-           android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".OldTestsActivity" />
         <activity android:name=".StudentStatusActivity" />
         <activity android:name=".StartTestActivity" />
@@ -32,11 +31,15 @@
         <activity android:name=".TabHostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AnswerPopupActivity"
-            android:theme="@style/AppTheme.CustomTheme"/>
+        <activity
+            android:name=".AnswerPopupActivity"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".QuestionsPopupActivity"
+            android:theme="@style/AppTheme.CustomTheme" />
     </application>
 
 </manifest>
