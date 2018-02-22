@@ -29,15 +29,17 @@
                 android:hint="Име на тест"
                 android:inputType="textPersonName" />
 
-            <EditText
-                android:id="@+id/disciplineNameEditText"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:gravity="center_horizontal"
-                android:hint="Дисциплина"
-                android:inputType="textPersonName" />
+                android:hint="Дизциплина"
+                android:textSize="18dp"
+                android:textAlignment="center"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_disciplines"
+                android:entries="@array/discipline"/>
 
         </LinearLayout>
 
@@ -68,11 +70,17 @@
             android:layout_weight="2"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnQuestion"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Добави въпрос" />
+                android:hint="Въпрос"
+                android:textAlignment="center"
+                android:textSize="18dp" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_question"
+                android:entries="@array/questions"/>
 
             <ListView
                 android:id="@+id/lv_questions"

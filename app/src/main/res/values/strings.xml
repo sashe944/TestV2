@@ -17,10 +17,9 @@
         <item>PL/SQL</item>
     </string-array>
     <string-array name="questions">
-        <item>Единичен</item>
-        <item>Повече от един отговор</item>
-        <item>Отговор със свободен текст</item>
+        <item>Как си?</item>
+        <item>Какво правиш?</item>
+        <item>На колко си?</item>
     </string-array>
     <string name="title_activity_teacher_menu">TeacherMenuActivity</string>
-
 </resources>

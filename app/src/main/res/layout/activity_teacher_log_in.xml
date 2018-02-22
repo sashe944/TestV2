@@ -58,7 +58,7 @@
                 android:id="@+id/btn_log_in"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="220dp"
                 android:background="@drawable/buttonstyleselector"
                 android:text="Log in"
                 android:textColor="#fff" />

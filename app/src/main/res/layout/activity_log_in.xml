@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="100dp">
+            android:paddingTop="150dp">
 
             <TextView
                 android:id="@+id/textView"
@@ -69,7 +69,7 @@
             <Button
                 android:id="@+id/btn_register"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonstyleselector"
                 android:text="Register"
