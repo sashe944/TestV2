@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.home.androidtestgame.OldTestsActivity"
+    android:orientation="horizontal">
+
+    <Spinner
+        android:entries="@array/fromDate"
+        android:id="@+id/spinner_from"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <Spinner
+        android:entries="@array/toDate"
+        android:id="@+id/spinner_to"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
+
+    <Spinner
+        android:entries="@array/discipline"
+        android:id="@+id/spinner_discipline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/spinner_from"
+        android:layout_marginTop="47dp" />
+
+    <ListView
+        android:id="@+id/lv_moreInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/spinner_from"
+        android:layout_marginTop="96dp" />
+
+
+</RelativeLayout>
