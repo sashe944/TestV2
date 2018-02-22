@@ -6,8 +6,12 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class TeacherCreateTestActivity extends AppCompatActivity {
@@ -16,6 +20,9 @@ public class TeacherCreateTestActivity extends AppCompatActivity {
     EditText et_dateTo;
     int year_fromDate, month_fromDate, day_fromDate;
     int year_toDate, month_toDate, day_toDate;
+    ArrayAdapter<String> adapter;
+    ArrayList<String> items;
+    ListView listViewQuestions;
 
     DatePickerDialog.OnDateSetListener dateSetListener;
 
@@ -26,9 +33,16 @@ public class TeacherCreateTestActivity extends AppCompatActivity {
 
         et_dateFrom = findViewById(R.id.fromDateEditText);
         et_dateTo = findViewById(R.id.toDateEditText);
+        listViewQuestions = findViewById(R.id.lv_questions);
 
         et_dateFrom.setOnClickListener(onClickListenerFromDate);
         et_dateTo.setOnClickListener(onClickListenerToDate);
+        items = new ArrayList<>();
+        items.add("Kak си ?");
+        items.add("Какво правиш ?");
+        items.add("На колко си ?");
+        adapter = new ArrayAdapter<String>(this,R.layout.question_row,R.id.tv_question,items);
+        listViewQuestions.setAdapter(adapter);
 
     }
 
@@ -78,4 +92,6 @@ public class TeacherCreateTestActivity extends AppCompatActivity {
             };
         }
     };
+
+
 }
