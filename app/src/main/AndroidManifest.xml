@@ -38,8 +38,10 @@
         <activity
             android:name=".AnswerPopupActivity"
             android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".QuestionsPopupActivity"
+        <activity
+            android:name=".QuestionsPopupActivity"
             android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".TeacherGradeStudentsAnswerActivity"></activity>
     </application>
 
 </manifest>

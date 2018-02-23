@@ -28,7 +28,7 @@ public class LogInActivity extends AppCompatActivity {
         public void onClick(View v) {
 
             Intent intent = null;
-            if(v.getId()==R.id.btn_log_in){
+            if(v.getId()== R.id.btn_log_in){
                intent = new Intent(LogInActivity.this,StudentStatusActivity.class);
             }else {
                 intent = new Intent(LogInActivity.this, RegisterActivity.class);

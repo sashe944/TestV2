@@ -41,7 +41,7 @@
             android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/questions"/>
+            android:entries="@array/answers"/>
 
         <Button
             android:id="@+id/btn_write_answer"

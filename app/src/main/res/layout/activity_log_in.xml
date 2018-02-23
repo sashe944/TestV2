@@ -39,7 +39,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:hint="Username"
-                    android:textColorHint="#2c5aff" />
+                    android:textColorHint="#2c5aff"/>
 
             </android.support.design.widget.TextInputLayout>
 
