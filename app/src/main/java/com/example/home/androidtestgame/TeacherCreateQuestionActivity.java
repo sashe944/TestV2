@@ -26,7 +26,7 @@ public class TeacherCreateQuestionActivity extends AppCompatActivity {
        list.add("Добре съм");
        list.add("На 23 години съм");
 
-       adapter = new ArrayAdapter<String>(this,R.layout.questions_layout,R.id.tv_question,list);
+       adapter = new ArrayAdapter<String>(this,R.layout.questions_layout,R.id.tv_question_add,list);
 
        lv_test_answers.setAdapter(adapter);
 

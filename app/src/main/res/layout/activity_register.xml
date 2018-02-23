@@ -108,7 +108,7 @@
             android:id="@+id/btn_ok"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="170dp"
             android:background="@drawable/buttonstyleselector"
             android:text="OK"
             android:textColor="#fff" />
