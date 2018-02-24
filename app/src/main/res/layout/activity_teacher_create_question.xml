@@ -44,9 +44,11 @@
             android:entries="@array/answers"/>
 
         <Button
+            android:textColor="#fff"
             android:id="@+id/btn_write_answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/buttonstyleselector"
             android:text="Добави отговор" />
 
         <ListView
@@ -64,16 +66,20 @@
         android:orientation="horizontal">
 
         <Button
+            android:textColor="#fff"
             android:id="@+id/btnSaveQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/buttonstyleselector"
             android:text="Запази" />
 
         <Button
+            android:textColor="#fff"
             android:id="@+id/btnCancelQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/buttonstyleselector"
             android:layout_weight="1"
             android:text="Назад" />
     </LinearLayout>

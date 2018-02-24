@@ -167,17 +167,21 @@
             android:orientation="horizontal">
 
             <Button
+                android:textColor="#fff"
                 android:id="@+id/btnSaveTest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/buttonstyleselector"
                 android:text="Запази" />
 
             <Button
+                android:textColor="#fff"
                 android:id="@+id/btnCancelTest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/buttonstyleselector"
                 android:text="Назад" />
         </LinearLayout>
 

@@ -22,9 +22,11 @@
         tools:layout_editor_absoluteY="8dp" />
 
     <Button
+        android:textColor="#fff"
         android:id="@+id/buttonOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/buttonstyleselector"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/custom_lv_questions"
         android:layout_marginStart="24dp"
@@ -32,9 +34,11 @@
         android:text="@android:string/ok" />
 
     <Button
+        android:textColor="#fff"
         android:id="@+id/buttonCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/buttonstyleselector"
         android:layout_alignBaseline="@+id/buttonOk"
         android:layout_alignBottom="@+id/buttonOk"
         android:layout_alignParentEnd="true"
