@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_student_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="32dp"
+        android:text="Име на студент"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/tv_faculty_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="78dp"
+        android:text="№"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/et_student_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_student_name"
+        android:layout_marginTop="63dp"
+        android:ems="10"
+        android:inputType="textMultiLine"/>
+
+    <Button
+        android:background="@drawable/buttonstyleselector"
+        android:textColor="#fff"
+        android:id="@+id/buttonComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/et_student_answer"
+        android:layout_marginTop="82dp"
+        android:text="Коментар" />
+
+    <Button
+        android:id="@+id/buttonPoints"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonComment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/buttonstyleselector"
+        android:text="Точки"
+        android:textColor="#fff" />
+
+</RelativeLayout>
