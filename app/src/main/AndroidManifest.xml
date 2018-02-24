@@ -41,7 +41,9 @@
         <activity
             android:name=".QuestionsPopupActivity"
             android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".TeacherGradeStudentsAnswerActivity"></activity>
+        <activity android:name=".TeacherGradeStudentsAnswerActivity" />
+        <activity android:name=".TeacherViewTestResultsActivity" />
+        <activity android:name=".TeacherViewStudentResultsActivity"></activity>
     </application>
 
 </manifest>

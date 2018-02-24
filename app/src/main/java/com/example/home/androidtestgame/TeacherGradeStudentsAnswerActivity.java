@@ -32,8 +32,8 @@ public class TeacherGradeStudentsAnswerActivity extends AppCompatActivity {
         lv_stuAnswers = findViewById(R.id.lv_students_answers_to_questions);
 
         answersList.add("Erhan Mustafa");
-        answersList.add("1701737009");
-        answersList.add("Примерен отговор!");
+       /* answersList.add("1701737009");
+        answersList.add("Отворена операционна система!");*/
 
         lv_stuAnswers.setAdapter(new MyListAdapter(this,R.layout.student_answer_layout,answersList));
     }
@@ -60,6 +60,10 @@ public class TeacherGradeStudentsAnswerActivity extends AppCompatActivity {
                 viewHolder.student_name = convertView.findViewById(R.id.tv_student_name);
                 viewHolder.student_fn = convertView.findViewById(R.id.tv_faculty_number);
 
+                viewHolder.student_name.setText("Erhan Mustafa");
+                viewHolder.student_fn.setText("1701737009");
+                viewHolder.stu_answer.setText("Отворена операционна система!");
+
                viewHolder.btn_points.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -76,9 +80,6 @@ public class TeacherGradeStudentsAnswerActivity extends AppCompatActivity {
                 convertView.setTag(viewHolder);
             }else{
                 mainViewHolder = (ViewHolder) convertView.getTag();
-                mainViewHolder.student_name.setText(answersList.get(0));
-                mainViewHolder.student_fn.setText(answersList.get(1));
-                mainViewHolder.stu_answer.setText(answersList.get(2));
             }
             return convertView;
         }
