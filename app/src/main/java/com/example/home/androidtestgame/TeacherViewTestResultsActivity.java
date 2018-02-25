@@ -1,6 +1,7 @@
 package com.example.home.androidtestgame;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -63,7 +64,8 @@ public class TeacherViewTestResultsActivity extends AppCompatActivity {
                 viewHolder.btn_viewTest.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(TeacherViewTestResultsActivity.this,"pressed button",Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(TeacherViewTestResultsActivity.this, Viewing_Student_Results_Activity.class);
+                        startActivity(intent);
                     }
                 });
 

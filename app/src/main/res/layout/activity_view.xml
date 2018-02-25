@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.example.home.androidtestgame.ViewActivity">
 
     <TextView
         android:id="@+id/tv_view_student_name"
@@ -15,7 +16,7 @@
         android:textSize="18dp" />
 
     <TextView
-        android:id="@+id/tv_faculty_number"
+        android:id="@+id/tv_view_faculty_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -35,24 +36,24 @@
         android:inputType="textMultiLine"/>
 
     <Button
-        android:background="@drawable/buttonstyleselector"
-        android:textColor="#fff"
-        android:id="@+id/buttonAddComment"
+        android:id="@+id/buttonViewComment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/et_view_student_answer"
         android:layout_marginTop="82dp"
-        android:text="Коментар" />
+        android:background="@drawable/buttonstyleclicked"
+        android:text="Коментар"
+        android:textColor="#fff" />
 
     <Button
-        android:id="@+id/buttonAddPoints"
+        android:id="@+id/buttonViewPoints"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonAddComment"
+        android:layout_below="@+id/buttonViewComment"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:background="@drawable/buttonstyleselector"
+        android:background="@drawable/buttonstyleclicked"
         android:text="Точки"
         android:textColor="#fff" />
 

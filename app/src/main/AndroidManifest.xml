@@ -43,7 +43,14 @@
             android:theme="@style/AppTheme.CustomTheme" />
         <activity android:name=".TeacherGradeStudentsAnswerActivity" />
         <activity android:name=".TeacherViewTestResultsActivity" />
-        <activity android:name=".TeacherViewStudentResultsActivity"></activity>
+        <activity android:name=".TeacherViewStudentResultsActivity" />
+        <activity android:name=".ViewActivity" />
+        <activity android:name=".Viewing_Student_Results_Activity" />
+        <activity
+            android:name=".CommentPopUpGialogActivity"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".PointsPopupGialogActivity"
+            android:theme="@style/AppTheme.CustomTheme" />
     </application>
 
 </manifest>

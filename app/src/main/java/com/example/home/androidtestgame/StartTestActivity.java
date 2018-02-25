@@ -25,7 +25,6 @@ public class StartTestActivity extends AppCompatActivity {
         items.add("C#");
         items.add("JAVA");
         items.add("PHP");
-        items.add("ANDROID");
         items.add("C");
         items.add("PYTHON");
         items.add("PL/SQL");

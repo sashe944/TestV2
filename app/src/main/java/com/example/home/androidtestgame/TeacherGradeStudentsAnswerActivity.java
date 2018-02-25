@@ -54,10 +54,10 @@ public class TeacherGradeStudentsAnswerActivity extends AppCompatActivity {
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 convertView = inflater.inflate(layout,parent,false);
                 ViewHolder viewHolder = new ViewHolder();
-                viewHolder.btn_points = convertView.findViewById(R.id.buttonPoints);
-                viewHolder.btn_comment = convertView.findViewById(R.id.buttonComment);
-                viewHolder.stu_answer = convertView.findViewById(R.id.et_student_answer);
-                viewHolder.student_name = convertView.findViewById(R.id.tv_student_name);
+                viewHolder.btn_points = convertView.findViewById(R.id.buttonAddPoints);
+                viewHolder.btn_comment = convertView.findViewById(R.id.buttonAddComment);
+                viewHolder.stu_answer = convertView.findViewById(R.id.et_view_student_answer);
+                viewHolder.student_name = convertView.findViewById(R.id.tv_view_student_name);
                 viewHolder.student_fn = convertView.findViewById(R.id.tv_faculty_number);
 
                 viewHolder.student_name.setText("Erhan Mustafa");
@@ -67,13 +67,15 @@ public class TeacherGradeStudentsAnswerActivity extends AppCompatActivity {
                viewHolder.btn_points.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // TODO: 24.2.2018 г.  Make new Activity with the proper needed things for look test
+                        Intent intent = new Intent(TeacherGradeStudentsAnswerActivity.this,PointsPopupGialogActivity.class);
+                        startActivity(intent);
                     }
                 });
                 viewHolder.btn_comment.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(TeacherGradeStudentsAnswerActivity.this,"pressed button",Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(TeacherGradeStudentsAnswerActivity.this,CommentPopUpGialogActivity.class);
+                        startActivity(intent);
                     }
                 });
 
