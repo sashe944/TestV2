@@ -54,15 +54,15 @@ public class Viewing_Student_Results_Activity extends AppCompatActivity {
                 convertView = inflater.inflate(layout,parent,false);
                 ViewHolder viewHolder = new ViewHolder();
 
-                viewHolder.btn_view_comment = convertView.findViewById(R.id.buttonViewComment);
-                viewHolder.btn_view_points = convertView.findViewById(R.id.buttonViewPoints);
+                viewHolder.et_view_comment = convertView.findViewById(R.id.etViewComment);
+                viewHolder.et_view_points = convertView.findViewById(R.id.etViewPoints);
 
                 viewHolder.view_student_name = convertView.findViewById(R.id.tv_view_student_name);
                 viewHolder.view_student_fn = convertView.findViewById(R.id.tv_view_faculty_number);
                 viewHolder.view_stu_answer = convertView.findViewById(R.id.et_view_student_answer);
 
-                viewHolder.btn_view_points.setEnabled(false);
-                viewHolder.btn_view_comment.setEnabled(false);
+                viewHolder.et_view_points.setEnabled(false);
+                viewHolder.et_view_comment.setEnabled(false);
 
                 viewHolder.view_student_name.setText("Erhan Mustafa");
                 viewHolder.view_student_fn.setText("1701737009");
@@ -76,8 +76,8 @@ public class Viewing_Student_Results_Activity extends AppCompatActivity {
         }
     }
     public  class ViewHolder {
-        Button btn_view_points;
-        Button btn_view_comment;
+        EditText et_view_comment;
+        EditText et_view_points;
         TextView view_student_name;
         TextView view_student_fn;
         EditText view_stu_answer;

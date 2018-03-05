@@ -54,8 +54,8 @@ public class TeacherGradeStudentsAnswerActivity extends AppCompatActivity {
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 convertView = inflater.inflate(layout,parent,false);
                 ViewHolder viewHolder = new ViewHolder();
-                viewHolder.btn_points = convertView.findViewById(R.id.buttonAddPoints);
-                viewHolder.btn_comment = convertView.findViewById(R.id.buttonAddComment);
+                viewHolder.et_points = convertView.findViewById(R.id.etAddPoints);
+                viewHolder.et_comment = convertView.findViewById(R.id.etAddComment);
                 viewHolder.stu_answer = convertView.findViewById(R.id.et_view_student_answer);
                 viewHolder.student_name = convertView.findViewById(R.id.tv_view_student_name);
                 viewHolder.student_fn = convertView.findViewById(R.id.tv_faculty_number);
@@ -63,21 +63,9 @@ public class TeacherGradeStudentsAnswerActivity extends AppCompatActivity {
                 viewHolder.student_name.setText("Erhan Mustafa");
                 viewHolder.student_fn.setText("1701737009");
                 viewHolder.stu_answer.setText("Отворена операционна система!");
-
-               viewHolder.btn_points.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(TeacherGradeStudentsAnswerActivity.this,PointsPopupGialogActivity.class);
-                        startActivity(intent);
-                    }
-                });
-                viewHolder.btn_comment.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(TeacherGradeStudentsAnswerActivity.this,CommentPopUpGialogActivity.class);
-                        startActivity(intent);
-                    }
-                });
+                viewHolder.stu_answer.setEnabled(false);
+                viewHolder.et_comment.setEnabled(true);
+                viewHolder.et_points.setEnabled(true);
 
                 convertView.setTag(viewHolder);
             }else{
@@ -87,8 +75,8 @@ public class TeacherGradeStudentsAnswerActivity extends AppCompatActivity {
         }
     }
     public  class ViewHolder {
-        Button btn_comment;
-        Button btn_points;
+        EditText et_comment;
+        EditText et_points;
         TextView student_name;
         TextView student_fn;
         EditText stu_answer;

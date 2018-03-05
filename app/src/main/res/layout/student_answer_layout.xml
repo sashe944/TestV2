@@ -32,28 +32,30 @@
         android:layout_below="@+id/tv_view_student_name"
         android:layout_marginTop="63dp"
         android:ems="10"
-        android:inputType="textMultiLine"/>
+        android:inputType="textMultiLine" />
 
-    <Button
-        android:background="@drawable/buttonstyleselector"
-        android:textColor="#fff"
-        android:id="@+id/buttonAddComment"
+     <EditText
+         android:gravity="center_vertical|center_horizontal"
+         android:id="@+id/etAddComment"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentStart="true"
+         android:layout_below="@+id/et_view_student_answer"
+         android:layout_marginTop="82dp"
+         android:inputType="textMultiLine"
+         android:hint="Коментар" />
+
+
+    <EditText
+        android:gravity="center_vertical|center_horizontal"
+        android:id="@+id/etAddPoints"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/et_view_student_answer"
-        android:layout_marginTop="82dp"
-        android:text="Коментар" />
-
-    <Button
-        android:id="@+id/buttonAddPoints"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonAddComment"
+        android:layout_below="@+id/etAddComment"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:background="@drawable/buttonstyleselector"
-        android:text="Точки"
-        android:textColor="#fff" />
+        android:inputType="textMultiLine"
+        android:hint="Точки" />
+
 
 </RelativeLayout>

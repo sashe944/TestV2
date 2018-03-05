@@ -35,26 +35,24 @@
         android:ems="10"
         android:inputType="textMultiLine"/>
 
-    <Button
-        android:id="@+id/buttonViewComment"
+    <EditText
+        android:gravity="center_vertical|center_horizontal"
+        android:id="@+id/etViewComment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/et_view_student_answer"
         android:layout_marginTop="82dp"
-        android:background="@drawable/buttonstyleclicked"
-        android:text="Коментар"
-        android:textColor="#fff" />
+        android:hint="Коментар"/>
 
-    <Button
-        android:id="@+id/buttonViewPoints"
+    <EditText
+        android:gravity="center_vertical|center_horizontal"
+        android:id="@+id/etViewPoints"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonViewComment"
+        android:layout_below="@+id/etViewComment"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:background="@drawable/buttonstyleclicked"
-        android:text="Точки"
-        android:textColor="#fff" />
+        android:hint="Точки" />
 
 </RelativeLayout>
