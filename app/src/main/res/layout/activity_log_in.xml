@@ -33,35 +33,35 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/et_username"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:hint="Username"
-                    android:textColorHint="#2c5aff"/>
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/et_password"
+                    android:id="@+id/et_fnumber"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:hint="Password"
+                    android:hint="Факултетен номер"
                     android:textColorHint="#2c5aff" />
             </android.support.design.widget.TextInputLayout>
 
-            <Button
+            <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_student_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:hint="Парола"
+                    android:textColorHint="#2c5aff" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
                 android:id="@+id/btn_log_in"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="160dp"
                 android:background="@drawable/buttonstyleselector"
                 android:text="Log in"
                 android:textColor="#fff" />
