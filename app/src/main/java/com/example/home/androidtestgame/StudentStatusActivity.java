@@ -26,7 +26,10 @@ public class StudentStatusActivity extends AppCompatActivity {
         items.add("10.02.2005 JAVA 20");
         items.add("10.02.2005 ANDROID 30");
         items.add("10.02.2005 PHP 10");
-        items.add("10.02.2005 PYTHON 20");
+        items.add("10.02.2005 RUBY 20");
+        items.add("10.02.2005 GRAILS 20");
+        items.add("10.02.2005 RESTFUL 20");
+        items.add("10.02.2005 T-SQL 20");
 
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,

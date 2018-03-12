@@ -13,6 +13,9 @@ import java.util.ArrayList;
 public class TeacherCreateQuestionActivity extends AppCompatActivity {
 
     Button giveAnswer;
+    Button saveQuestion;
+    Button cancelSavingQuestion;
+
     ListView lv_test_answers;
     ArrayAdapter<String> adapter;
     ArrayList<String> list = new ArrayList<>();
@@ -22,6 +25,7 @@ public class TeacherCreateQuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_teacher_create_question);
 
        lv_test_answers= findViewById(R.id.lv_answers);
+       cancelSavingQuestion = findViewById(R.id.btnCancelQuestion);
 
        list.add("Добре съм");
        list.add("На 23 години съм");
@@ -33,6 +37,7 @@ public class TeacherCreateQuestionActivity extends AppCompatActivity {
        giveAnswer = findViewById(R.id.btn_write_answer);
 
        giveAnswer.setOnClickListener(onClickListener);
+       cancelSavingQuestion.setOnClickListener(onCancelListener);
 
     }
 
@@ -40,6 +45,21 @@ public class TeacherCreateQuestionActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(TeacherCreateQuestionActivity.this,AnswerPopupActivity.class);
+            startActivity(intent);
+        }
+    };
+
+    View.OnClickListener save = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //TODO: Save Question for the test
+        }
+    };
+
+    View.OnClickListener onCancelListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(TeacherCreateQuestionActivity.this,TeacherMenuActivity.class);
             startActivity(intent);
         }
     };

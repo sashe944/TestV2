@@ -22,14 +22,9 @@ public class StartTestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start_test);
 
         items = new ArrayList<>();
-        items.add("C#");
-        items.add("JAVA");
-        items.add("PHP");
-        items.add("C");
-        items.add("PYTHON");
-        items.add("PL/SQL");
-        items.add("MySQL");
-        items.add("T-SQL");
+
+        items.add("ANDROID");
+
    lvStartTest = findViewById(R.id.lv_choose_test);
 
       ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.single_row,R.id.textView,items);

@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -19,6 +20,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class TeacherCreateTestActivity extends AppCompatActivity {
+
+    Button saveTest;
+    Button cancelSavingTest;
 
     EditText et_dateFrom;
     EditText et_dateTo;
@@ -35,12 +39,19 @@ public class TeacherCreateTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_create_test);
 
+        saveTest =findViewById(R.id.btnSaveTest);
+        cancelSavingTest = findViewById(R.id.btnCancelTest);
+
         et_dateFrom = findViewById(R.id.fromDateEditText);
         et_dateTo = findViewById(R.id.toDateEditText);
         listViewQuestions = findViewById(R.id.lv_questions);
 
         et_dateFrom.setOnClickListener(onClickListenerFromDate);
         et_dateTo.setOnClickListener(onClickListenerToDate);
+
+        saveTest.setOnClickListener(onSaveTestListener);
+        cancelSavingTest.setOnClickListener(onSaveTestListener);
+
         items = new ArrayList<>();
         items.add("Kak си ?");
         items.add("Какво правиш ?");
@@ -109,5 +120,18 @@ public class TeacherCreateTestActivity extends AppCompatActivity {
             };
         }
     };
+
+   View.OnClickListener onSaveTestListener = new View.OnClickListener() {
+       @Override
+       public void onClick(View v) {
+
+           if(v.getId()==R.id.btnSaveTest){
+               //TODO: Save Test
+           }else{
+               Intent intent = new Intent(TeacherCreateTestActivity.this,TeacherMenuActivity.class);
+               startActivity(intent);
+           }
+       }
+   } ;
 
 }

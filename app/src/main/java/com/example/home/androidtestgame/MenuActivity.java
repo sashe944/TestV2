@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TabHost;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,20 +48,10 @@ public class MenuActivity extends AppCompatActivity
             intent = new Intent(MenuActivity.this,OldTestsActivity.class);
         }else if (id==R.id.nav_start_test){
             intent = new Intent(MenuActivity.this,StartTestActivity.class);
+        }else if(id==R.id.nav_log_out){
+            intent = new Intent(MenuActivity.this, TabHostActivity.class);
         }
-/*        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }*/
         startActivity(intent);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

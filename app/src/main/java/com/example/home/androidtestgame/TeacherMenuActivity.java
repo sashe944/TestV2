@@ -53,22 +53,10 @@ public class TeacherMenuActivity extends AppCompatActivity
         }
         else if(id==R.id.nav_grade){
             intent = new Intent(TeacherMenuActivity.this,TeacherGiveGradeActivity.class);
+        }else if(id==R.id.nav_log_out){
+            intent = new Intent(TeacherMenuActivity.this,TabHostActivity.class);
         }
         startActivity(intent);
-/*
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }*/
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

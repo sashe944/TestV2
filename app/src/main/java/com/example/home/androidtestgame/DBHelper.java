@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "TestVersionSecondDataBase.db";
+    public static final String DATABASE_NAME = "TestVersionSecondDataBaseTest.db";
     public static final int DATABASE_VERSION = 1;
 
 

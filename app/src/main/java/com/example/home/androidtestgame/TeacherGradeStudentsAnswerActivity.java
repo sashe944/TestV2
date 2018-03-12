@@ -23,6 +23,7 @@ public class TeacherGradeStudentsAnswerActivity extends AppCompatActivity {
 
     ListView lv_stuAnswers;
     ArrayList<String> answersList = new ArrayList<>();
+    Button cancelGivingGrade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,24 @@ public class TeacherGradeStudentsAnswerActivity extends AppCompatActivity {
 
         lv_stuAnswers = findViewById(R.id.lv_students_answers_to_questions);
 
+        cancelGivingGrade = findViewById(R.id.buttonCancel);
+        cancelGivingGrade.setOnClickListener(cancelListener);
+
         answersList.add("Erhan Mustafa");
        /* answersList.add("1701737009");
         answersList.add("Отворена операционна система!");*/
 
         lv_stuAnswers.setAdapter(new MyListAdapter(this,R.layout.student_answer_layout,answersList));
     }
+
+    View.OnClickListener cancelListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+           Intent intent = new Intent(TeacherGradeStudentsAnswerActivity.this,TeacherMenuActivity.class);
+           startActivity(intent);
+        }
+    };
+
     private class MyListAdapter extends ArrayAdapter<String> {
 
         private int layout;
@@ -81,4 +94,5 @@ public class TeacherGradeStudentsAnswerActivity extends AppCompatActivity {
         TextView student_fn;
         EditText stu_answer;
     }
+
 }
