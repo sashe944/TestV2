@@ -45,9 +45,12 @@ public class LogInActivity extends AppCompatActivity {
                 studentFaculyNumber = fNumber.getText().toString();
                 studentPassword = password.getText().toString();
 
-                MyHelper.LogInStudent(studentPassword,studentFaculyNumber);
 
-               intent = new Intent(LogInActivity.this,StudentStatusActivity.class);
+
+                    MyHelper.LogInStudent(studentPassword, studentFaculyNumber);
+
+                    intent = new Intent(LogInActivity.this, StudentStatusActivity.class);
+
             }else {
                 intent = new Intent(LogInActivity.this, RegisterActivity.class);
             }

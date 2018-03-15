@@ -44,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         ok = findViewById(R.id.btn_ok);
         cancel = findViewById(R.id.btn_cancel);
+
         studentSex = findViewById(R.id.genderRadioGroup);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -53,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-              //NOTHING
+              //NOTHING YET
             }
         });
 
@@ -81,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                  String sex = gender.getText().toString();
 
 
-                MyHelper.addUser(fNumber,fullName,pass,choice,sex);
+                MyHelper.addStudent(fNumber,fullName,pass,choice,sex);
 
                 Intent menuIntent = new Intent (RegisterActivity.this,MenuActivity.class);
                 startActivity(menuIntent);

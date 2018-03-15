@@ -49,8 +49,10 @@
         <activity
             android:name=".CommentPopUpGialogActivity"
             android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".PointsPopupGialogActivity"
+        <activity
+            android:name=".PointsPopupGialogActivity"
             android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".TeacherViewHisOwnProfileActivity"></activity>
     </application>
 
 </manifest>

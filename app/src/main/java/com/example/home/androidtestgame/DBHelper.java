@@ -35,7 +35,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + UserType + "(_id,Name) VALUES(1,'Student')");
     }
 
-    public boolean addUser(String FNumber,String fullName,String password,String userType,String gender) {
+    public boolean addStudent(String FNumber,String fullName,String password,String userType,String gender) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("FacultyNumber", FNumber);

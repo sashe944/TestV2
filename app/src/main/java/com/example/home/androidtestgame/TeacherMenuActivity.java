@@ -42,7 +42,10 @@ public class TeacherMenuActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if(id==R.id.nav_create_test){
+        if(id==R.id.nav_profile){
+            intent = new Intent(TeacherMenuActivity.this,TeacherViewHisOwnProfileActivity.class);
+        }
+        else if(id==R.id.nav_create_test){
             intent = new Intent(TeacherMenuActivity.this,TeacherCreateTestActivity.class);
         }
         else if(id==R.id.nav_create_question){

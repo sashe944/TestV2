@@ -16,7 +16,6 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
 
        give = findViewById(R.id.buttonGiveToTeacher);
-
        give.setOnClickListener(onClickListener);
     }
 
