@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="167dp"
                 android:layout_gravity="center"
-                android:text="Student Log IN"
+                android:text="Влизане на студент"
                 android:textAlignment="center"
                 android:textColor="#2c5aff"
                 android:textSize="50dp" />
@@ -63,7 +63,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="160dp"
                 android:background="@drawable/buttonstyleselector"
-                android:text="Log in"
+                android:text="Влез"
                 android:textColor="#fff" />
 
             <Button
@@ -72,7 +72,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonstyleselector"
-                android:text="Register"
+                android:text="Регистрация"
                 android:textColor="#fff" />
 
 

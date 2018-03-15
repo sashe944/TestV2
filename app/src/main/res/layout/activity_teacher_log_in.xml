@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="167dp"
                 android:layout_gravity="center"
-                android:text="Teacher Log IN"
+                android:text="Влизане на преподавател"
                 android:textColor="#2c5aff"
                 android:textAlignment="center"
                 android:textSize="50dp" />
@@ -37,7 +37,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:textColorHint="#2c5aff"
-                    android:hint="Username"/>
+                    android:hint="Име"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -51,7 +51,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:textColorHint="#2c5aff"
-                    android:hint="Password" />
+                    android:hint="Парола" />
             </android.support.design.widget.TextInputLayout>
 
             <Button
@@ -60,7 +60,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="220dp"
                 android:background="@drawable/buttonstyleselector"
-                android:text="Log in"
+                android:text="Влез"
                 android:textColor="#fff" />
 
         </LinearLayout>

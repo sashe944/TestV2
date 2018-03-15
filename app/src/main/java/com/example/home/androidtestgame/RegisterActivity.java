@@ -66,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             if(v.getId()==R.id.btn_cancel){
-                finishAffinity();
+               onBackPressed();
             }else{
 
                 studentName = Name.getText().toString();
@@ -91,4 +91,8 @@ public class RegisterActivity extends AppCompatActivity {
         }
     };
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

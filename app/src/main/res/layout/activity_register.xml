@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="114dp"
             android:layout_gravity="center"
-            android:text="Register"
+            android:text="Регистрация"
             android:textColor="#2c5aff"
             android:layout_marginTop="50dp"
             android:textAlignment="center"
@@ -111,14 +111,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Male" />
+                android:text="Мъж" />
 
             <RadioButton
                 android:id="@+id/rb_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:text="Female" />
+                android:text="Жена" />
         </RadioGroup>
         <Button
             android:id="@+id/btn_ok"
@@ -135,7 +135,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/buttonstyleselector"
-            android:text="CANCEL"
+            android:text="Изход"
             android:textColor="#fff" />
 
     </LinearLayout>
