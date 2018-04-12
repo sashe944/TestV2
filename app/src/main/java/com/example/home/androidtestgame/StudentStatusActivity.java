@@ -9,33 +9,14 @@ import java.util.ArrayList;
 
 public class StudentStatusActivity extends AppCompatActivity {
 
-    ListView lvStudentInfo;
-    ArrayList<String> items = new ArrayList<>();
-    ArrayAdapter adapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_status);
 
-        lvStudentInfo = findViewById(R.id.lv_studentInfo);
-
-        items.add("10.02.2005 PL/SQL 20");
-        items.add("10.02.2005 C 20");
-        items.add("10.02.2005 C# 20");
-        items.add("10.02.2005 JAVA 20");
-        items.add("10.02.2005 ANDROID 30");
-        items.add("10.02.2005 PHP 10");
-        items.add("10.02.2005 RUBY 20");
-        items.add("10.02.2005 GRAILS 20");
-        items.add("10.02.2005 RESTFUL 20");
-        items.add("10.02.2005 T-SQL 20");
-
-        adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1,
-                items);
-
-        lvStudentInfo.setAdapter(adapter);
-
+        StudentStatusFragment studentStatusFragment = new StudentStatusFragment();
+        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.studentStatusFragmentContainer,studentStatusFragment);
+        fragmentTransaction.commit();
     }
 }
