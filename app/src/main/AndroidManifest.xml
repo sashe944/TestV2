@@ -52,7 +52,7 @@
         <activity
             android:name=".PointsPopupGialogActivity"
             android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".TeacherViewHisOwnProfileActivity"></activity>
+        <activity android:name=".TeacherViewHisOwnProfileActivity" />
     </application>
 
 </manifest>

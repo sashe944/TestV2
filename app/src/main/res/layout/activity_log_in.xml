@@ -39,6 +39,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:hint="Факултетен номер"
+                    android:inputType="text"
                     android:textColorHint="#2c5aff" />
             </android.support.design.widget.TextInputLayout>
 
@@ -53,10 +54,10 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:hint="Парола"
+                    android:inputType="textPassword"
                     android:textColorHint="#2c5aff" />
 
         </android.support.design.widget.TextInputLayout>
-
         <Button
                 android:id="@+id/btn_log_in"
                 android:layout_width="match_parent"
@@ -69,7 +70,7 @@
             <Button
                 android:id="@+id/btn_register"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="55dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonstyleselector"
                 android:text="Регистрация"

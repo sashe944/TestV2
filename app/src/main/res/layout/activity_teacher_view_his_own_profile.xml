@@ -13,15 +13,15 @@
         android:layout_height="445dp"
         android:layout_weight="8"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/yordan_todorov" />
+        app:srcCompat="@drawable/example_profile" />
 
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="8"
-        android:text="Yordan Todorov"
-        android:textSize="20dp" />
+        android:text="Example Name"
+        android:textSize="25dp" />
 
     <TextView
         android:id="@+id/textViewPosition"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="5"
         android:text="Лектор"
-        android:textSize="10dp"/>
+        android:textSize="14dp"/>
 
     <TextView
         android:id="@+id/textViewEmail"
@@ -37,7 +37,7 @@
         android:layout_height="22dp"
         android:layout_weight="5"
         android:text="example@example.com"
-        android:textSize="10dp" />
+        android:textSize="14dp" />
 
     <Button
         android:id="@+id/btn_back"

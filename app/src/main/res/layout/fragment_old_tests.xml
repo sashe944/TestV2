@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.home.androidtestgame.OldTestsFragment">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        tools:context="com.example.home.androidtestgame.OldTestsActivity">
+
+        <Spinner
+            android:id="@+id/spinner_from"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="55dp"
+            android:entries="@array/fromDate" />
+
+        <Spinner
+            android:id="@+id/spinner_to"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/spinner_discipline"
+            android:layout_alignParentEnd="true"
+            android:entries="@array/toDate" />
+
+        <Spinner
+            android:id="@+id/spinner_discipline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spinner_from"
+            android:layout_marginTop="30dp"
+            android:entries="@array/discipline" />
+
+
+        <ListView
+            android:id="@+id/lv_moreInfo"
+            android:layout_width="match_parent"
+            android:layout_height="510dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spinner_discipline"
+            android:layout_marginTop="19dp" />
+
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/buttonstyleselector"
+            android:text="Назад"
+            android:textColor="#fff" />
+
+    </RelativeLayout>
+</RelativeLayout>

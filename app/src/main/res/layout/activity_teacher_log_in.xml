@@ -30,28 +30,32 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <EditText
                     android:id="@+id/et_teacher_username"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:textColorHint="#2c5aff"
-                    android:hint="Име"/>
+                    android:hint="Име"
+                    android:inputType="text"
+                    android:textColorHint="#2c5aff" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <EditText
                     android:id="@+id/et_teacher_password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:textColorHint="#2c5aff"
-                    android:hint="Парола" />
+                    android:hint="Парола"
+                    android:inputType="textPassword"
+                    android:textColorHint="#2c5aff" />
             </android.support.design.widget.TextInputLayout>
 
             <Button

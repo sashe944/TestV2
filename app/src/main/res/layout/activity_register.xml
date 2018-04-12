@@ -38,6 +38,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:hint="Име"
+                android:inputType="text"
                 android:textColorHint="#2c5aff" />
         </android.support.design.widget.TextInputLayout>
 
@@ -47,12 +48,13 @@
 
             <EditText
                 android:id="@+id/et_fNumber"
-                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
                 android:layout_marginTop="5dp"
                 android:hint="Факултетен номер"
+                android:inputType="text"
                 android:textColorHint="#2c5aff" />
         </android.support.design.widget.TextInputLayout>
 
@@ -132,7 +134,7 @@
         <Button
             android:id="@+id/btn_cancel"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/buttonstyleselector"
             android:text="Изход"

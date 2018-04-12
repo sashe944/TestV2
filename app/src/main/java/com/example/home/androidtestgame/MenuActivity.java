@@ -41,7 +41,24 @@ public class MenuActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         Intent intent = null;
         int id = item.getItemId();
-        if(id==R.id.nav_profile){
+
+        if(id==R.id.nav_old_tests){
+            OldTestsFragment oldTestsFragment = new OldTestsFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fillThisPlaceWithFragment,oldTestsFragment);
+            fragmentTransaction.commit();
+        }
+        else if(id==R.id.nav_start_test){
+            StartTestFragment startTestFragment = new StartTestFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fillThisPlaceWithFragment,startTestFragment);
+            fragmentTransaction.commit();
+        }
+        else if(id==R.id.nav_log_out){
+            intent = new Intent(MenuActivity.this, TabHostActivity.class);
+        }
+
+      /*  if(id==R.id.nav_profile){
             intent = new Intent(MenuActivity.this,RegisterActivity.class);
         }
         else if(id==R.id.nav_old_tests){
@@ -50,7 +67,7 @@ public class MenuActivity extends AppCompatActivity
             intent = new Intent(MenuActivity.this,StartTestActivity.class);
         }else if(id==R.id.nav_log_out){
             intent = new Intent(MenuActivity.this, TabHostActivity.class);
-        }
+        }*/
 
         startActivity(intent);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

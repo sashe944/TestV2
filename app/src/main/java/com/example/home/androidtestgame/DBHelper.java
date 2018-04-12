@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "TestVersionSecondDataBaseTest.db";
+    public static final String DATABASE_NAME = "Test2NDVersionDb.db";
     public static final int DATABASE_VERSION = 1;
 
 
@@ -32,7 +32,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE " + User + " (_id INTEGER PRIMARY KEY AUTOINCREMENT,FacultyNumber TEXT,Name TEXT,Gender TEXT,Password TEXT, UserTypeID INTEGER,FOREIGN KEY(UserTypeID) REFERENCES UserType(_id))");
         db.execSQL("CREATE TABLE " + UserType + "(_id INTEGER PRIMARY KEY,Name TEXT)");
-        db.execSQL("INSERT INTO " + UserType + "(_id,Name) VALUES(1,'Student')");
+        db.execSQL("INSERT INTO " + UserType + "(_id,Name) VALUES(1,'Студент')");
     }
 
     public boolean addStudent(String FNumber,String fullName,String password,String userType,String gender) {
