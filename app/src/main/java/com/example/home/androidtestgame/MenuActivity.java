@@ -39,10 +39,10 @@ public class MenuActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        Intent intent = null;
         int id = item.getItemId();
         if(id==R.id.nav_profile){
-            intent = new Intent(MenuActivity.this,RegisterActivity.class);
+           Intent intent = new Intent(MenuActivity.this,RegisterActivity.class);
+            startActivity(intent);
         }
         else if(id==R.id.nav_old_tests){
             OldTestsFragment oldTestsFragment = new OldTestsFragment();
@@ -57,21 +57,9 @@ public class MenuActivity extends AppCompatActivity
             fragmentTransaction.commit();
         }
         else if(id==R.id.nav_log_out){
-            intent = new Intent(MenuActivity.this, TabHostActivity.class);
+           Intent intent = new Intent(MenuActivity.this, TabHostActivity.class);
+            startActivity(intent);
         }
-
-      /*  if(id==R.id.nav_profile){
-            intent = new Intent(MenuActivity.this,RegisterActivity.class);
-        }
-        else if(id==R.id.nav_old_tests){
-            intent = new Intent(MenuActivity.this,OldTestsActivity.class);
-        }else if (id==R.id.nav_start_test){
-            intent = new Intent(MenuActivity.this,StartTestActivity.class);
-        }else if(id==R.id.nav_log_out){
-            intent = new Intent(MenuActivity.this, TabHostActivity.class);
-        }*/
-
-        startActivity(intent);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
