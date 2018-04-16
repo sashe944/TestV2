@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.home.androidtestgame.TeacherViewHisOwnProfileActivity">
+
+    <ImageView
+        android:id="@+id/imageViewTecher"
+        android:layout_width="match_parent"
+        android:layout_height="445dp"
+        android:layout_weight="8"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/example_profile" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="8"
+        android:text="Example Name"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textViewPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:text="Лектор"
+        android:textSize="14dp"/>
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_weight="5"
+        android:text="example@example.com"
+        android:textSize="14dp" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:text="Обратно"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:background="@drawable/buttonstyleselector"/>
+</LinearLayout>
+

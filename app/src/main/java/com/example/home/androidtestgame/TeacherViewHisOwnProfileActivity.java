@@ -7,26 +7,16 @@ import android.widget.Button;
 
 public class TeacherViewHisOwnProfileActivity extends AppCompatActivity {
 
-    Button buttonGoBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_view_his_own_profile);
 
-        buttonGoBack = findViewById(R.id.btn_back);
-        buttonGoBack.setOnClickListener(onBackClicked);
-    }
+        TeacherViewsHisOwnProfileFragment teacherFragment = new TeacherViewsHisOwnProfileFragment();
+        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.teacherProfileContainer,teacherFragment);
+        fragmentTransaction.commit();
 
-    View.OnClickListener onBackClicked = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            onBackPressed();
-        }
-    };
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
     }
 }
