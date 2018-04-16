@@ -38,28 +38,38 @@ public class TeacherMenuActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        Intent intent = null;
+        //Intent intent = null;
 
         int id = item.getItemId();
 
         if(id==R.id.nav_profile){
-            intent = new Intent(TeacherMenuActivity.this,TeacherViewHisOwnProfileActivity.class);
-        }
-        else if(id==R.id.nav_create_test){
-            intent = new Intent(TeacherMenuActivity.this,TeacherCreateTestActivity.class);
-        }
-        else if(id==R.id.nav_create_question){
-            intent = new Intent(TeacherMenuActivity.this,TeacherCreateQuestionActivity.class);
+            TeacherViewsHisOwnProfileFragment teacherFragment = new TeacherViewsHisOwnProfileFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fillThisContainerWithFragment,teacherFragment);
+            fragmentTransaction.commit();
         }
         else if(id == R.id.nav_create_discipline){
-            intent = new Intent(TeacherMenuActivity.this,TeacherCreateDisciplineActivity.class);
+          TeacherCreateDisciplineFragment disciplineFragment = new TeacherCreateDisciplineFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fillThisContainerWithFragment,disciplineFragment);
+            fragmentTransaction.commit();
+        }
+        else if(id==R.id.nav_create_test){
+            Intent intent = new Intent(TeacherMenuActivity.this,TeacherCreateTestActivity.class);
+            startActivity(intent);
+        }
+        else if(id==R.id.nav_create_question){
+            Intent intent = new Intent(TeacherMenuActivity.this,TeacherCreateQuestionActivity.class);
+            startActivity(intent);
         }
         else if(id==R.id.nav_grade){
-            intent = new Intent(TeacherMenuActivity.this,TeacherGiveGradeActivity.class);
+            Intent intent = new Intent(TeacherMenuActivity.this,TeacherGiveGradeActivity.class);
+            startActivity(intent);
+
         }else if(id==R.id.nav_log_out){
-            intent = new Intent(TeacherMenuActivity.this,TabHostActivity.class);
+            Intent intent = new Intent(TeacherMenuActivity.this,TabHostActivity.class);
+            startActivity(intent);
         }
-        startActivity(intent);
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

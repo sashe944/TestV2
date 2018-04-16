@@ -4,6 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/teacherProfileContainer"
-    tools:context="com.example.home.androidtestgame.TeacherViewHisOwnProfileActivity">
+    tools:context="com.example.home.androidtestgame.Teacher.TeacherViewHisOwnProfileActivity">
 
 </FrameLayout>

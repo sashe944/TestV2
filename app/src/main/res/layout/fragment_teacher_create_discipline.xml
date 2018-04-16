@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.home.androidtestgame.TeacherCreateDisciplineActivity">
+
+    <EditText
+        android:layout_marginTop="50dp"
+        android:id="@+id/disciplineEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="Име на дисциплината"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Описание"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="161dp"
+        android:ems="10"
+        android:inputType="text|textMultiLine|textUri|textShortMessage|textLongMessage" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:textColor="#fff"
+            android:id="@+id/btnAddDiscipline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonstyleselector"
+            android:layout_weight="1"
+            android:text="Добави" />
+
+        <Button
+            android:textColor="#fff"
+            android:id="@+id/btnCancelDiscipline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonstyleselector"
+            android:layout_weight="1"
+            android:text="Назад" />
+    </LinearLayout>
+</LinearLayout>

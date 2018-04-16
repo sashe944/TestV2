@@ -24,7 +24,6 @@
             android:name=".TeacherMenuActivity"
             android:label="@string/title_activity_teacher_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TeacherCreateDisciplineActivity" />
         <activity android:name=".TeacherCreateQuestionActivity" />
         <activity android:name=".TeacherCreateTestActivity" />
         <activity android:name=".TeacherGiveGradeActivity" />
