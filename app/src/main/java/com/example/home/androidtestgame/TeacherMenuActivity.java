@@ -55,8 +55,13 @@ public class TeacherMenuActivity extends AppCompatActivity
             fragmentTransaction.commit();
         }
         else if(id==R.id.nav_create_test){
-            Intent intent = new Intent(TeacherMenuActivity.this,TeacherCreateTestActivity.class);
-            startActivity(intent);
+           /* Intent intent = new Intent(TeacherMenuActivity.this,TeacherCreateTestActivity.class);
+            startActivity(intent);*/
+           TeacherCreateTestFragment createTestFragment = new TeacherCreateTestFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fillThisContainerWithFragment,createTestFragment);
+            fragmentTransaction.commit();
+
         }
         else if(id==R.id.nav_create_question){
             Intent intent = new Intent(TeacherMenuActivity.this,TeacherCreateQuestionActivity.class);
