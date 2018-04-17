@@ -34,6 +34,7 @@ public class StudentStatusFragment extends Fragment {
 
         lvStudentInfo = studentStatusView.findViewById(R.id.lv_studentInfo);
 
+        //1
         items.add("10.02.2005 PL/SQL 20");
         items.add("10.02.2005 C 20");
         items.add("10.02.2005 C# 20");

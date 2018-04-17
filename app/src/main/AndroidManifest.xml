@@ -11,21 +11,17 @@
         android:theme="@style/AppTheme">
         <activity android:name=".LogInActivity" />
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".StudentStatusActivity" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".OldTestsActivity" />
-        <activity android:name=".StudentStatusActivity" />
-        <activity android:name=".StartTestActivity" />
         <activity android:name=".TestActivity" />
         <activity android:name=".TeacherLogInActivity" />
         <activity
             android:name=".TeacherMenuActivity"
             android:label="@string/title_activity_teacher_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TeacherCreateQuestionActivity" />
-        <activity android:name=".TeacherCreateTestActivity" />
         <activity android:name=".TeacherGiveGradeActivity" />
         <activity android:name=".TabHostActivity">
             <intent-filter>
@@ -45,13 +41,6 @@
         <activity android:name=".TeacherViewStudentResultsActivity" />
         <activity android:name=".ViewActivity" />
         <activity android:name=".Viewing_Student_Results_Activity" />
-        <activity
-            android:name=".CommentPopUpGialogActivity"
-            android:theme="@style/AppTheme.CustomTheme" />
-        <activity
-            android:name=".PointsPopupGialogActivity"
-            android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".TeacherViewHisOwnProfileActivity" />
     </application>
 
 </manifest>
