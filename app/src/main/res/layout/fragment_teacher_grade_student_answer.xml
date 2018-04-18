@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.home.androidtestgame.TeacherGradeStudentsAnswerActivity">
+
+    <TextView
+        android:id="@+id/tv_check_given_answers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Въпроси"
+        android:textAlignment="center"
+        android:textSize="18dp" />
+
+    <ListView
+        android:id="@+id/lv_students_answers_to_questions"
+        android:layout_width="match_parent"
+        android:layout_height="590dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_check_given_answers" />
+
+    <Button
+        android:textColor="#fff"
+        android:id="@+id/buttonSave"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/buttonstyleselector"
+        android:text="Запиши" />
+
+    <Button
+        android:textColor="#fff"
+        android:id="@+id/buttonCancel"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/buttonstyleselector"
+        android:text="Назад" />
+</RelativeLayout>
