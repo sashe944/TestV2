@@ -12,6 +12,7 @@
         <activity android:name=".LogInActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".StudentStatusActivity" />
+        <activity android:name=".Viewing_Student_Results_Activity" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
@@ -22,7 +23,6 @@
             android:name=".TeacherMenuActivity"
             android:label="@string/title_activity_teacher_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TeacherGiveGradeActivity" />
         <activity android:name=".TabHostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,9 +38,6 @@
             android:theme="@style/AppTheme.CustomTheme" />
         <activity android:name=".TeacherGradeStudentsAnswerActivity" />
         <activity android:name=".TeacherViewTestResultsActivity" />
-        <activity android:name=".TeacherViewStudentResultsActivity" />
-        <activity android:name=".ViewActivity" />
-        <activity android:name=".Viewing_Student_Results_Activity" />
     </application>
 
 </manifest>

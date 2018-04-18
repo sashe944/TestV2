@@ -44,7 +44,7 @@ public class TeacherViewTestResultsFragment extends Fragment {
         results.add("Erhan Mustafa");
         /*results.add("1701737009");*/
 
-        lv_view_student_results.setAdapter(new TeacherViewTestResultsFragment.MyListAdapter(getContext(),R.layout.activity_teacher_view_student_results,results));
+        lv_view_student_results.setAdapter(new TeacherViewTestResultsFragment.MyListAdapter(getContext(),R.layout.fragment_teacher_view_student_results,results));
 
         return testResultsView;
     }

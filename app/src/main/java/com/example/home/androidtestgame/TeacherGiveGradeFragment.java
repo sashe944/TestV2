@@ -59,7 +59,7 @@ public class TeacherGiveGradeFragment extends Fragment {
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            TeacherGiveGradeActivity.ViewHolder mainViewHolder = null;
+            TeacherGiveGradeFragment.ViewHolder mainViewHolder = null;
             if(convertView==null){
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 convertView = inflater.inflate(layout,parent,false);
@@ -84,7 +84,7 @@ public class TeacherGiveGradeFragment extends Fragment {
                 });
                 convertView.setTag(viewHolder);
             }else{
-                mainViewHolder = (TeacherGiveGradeActivity.ViewHolder) convertView.getTag();
+                mainViewHolder = (TeacherGiveGradeFragment.ViewHolder) convertView.getTag();
 
             }
             return convertView;
