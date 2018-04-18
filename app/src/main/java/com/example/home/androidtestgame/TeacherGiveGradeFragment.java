@@ -42,7 +42,7 @@ public class TeacherGiveGradeFragment extends Fragment {
 
         disciplineArrayList.add("ANDROID");
 
-        studentGradeList.setAdapter(new TeacherGiveGradeFragment.MyListAdapter(getContext(),R.layout.grading_layout,disciplineArrayList));
+        studentGradeList.setAdapter(new TeacherGiveGradeFragment.MyListAdapter(getContext(),R.layout.fragment_grading,disciplineArrayList));
 
         return gradeView;
 
