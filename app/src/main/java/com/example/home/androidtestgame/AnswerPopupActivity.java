@@ -13,36 +13,16 @@ import android.widget.Button;
 
 public class AnswerPopupActivity extends AppCompatActivity {
 
-    Button addAnswer;
-    Button close;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.answer_popup_dialog);
 
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-
-        getWindow().setLayout((int)(width*.8),(int)(height*.6));
-
-        addAnswer = findViewById(R.id.btnAddAnswer);
-        close = findViewById(R.id.btnCancelAnswer);
-
-        close.setOnClickListener(closeListener);
+        AnswerPopupFragment answerPopupFragment = new AnswerPopupFragment();
+        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.answerPopupContainer,answerPopupFragment);
+        fragmentTransaction.commit();
     }
-    View.OnClickListener closeListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            onBackPressed();
-        }
-    };
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
 }
