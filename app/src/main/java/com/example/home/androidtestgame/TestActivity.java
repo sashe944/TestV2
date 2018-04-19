@@ -15,15 +15,17 @@ public class TestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-       give = findViewById(R.id.buttonGiveToTeacher);
-       give.setOnClickListener(onClickListener);
+        TestFragment testFragment = new TestFragment();
+        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.testContainer,testFragment);
+        fragmentTransaction.commit();
     }
 
-    View.OnClickListener onClickListener = new View.OnClickListener() {
+   /* View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(TestActivity.this,MenuActivity.class);
             startActivity(intent);
         }
-    };
+    };*/
 }
