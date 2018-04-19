@@ -3,9 +3,6 @@ package com.example.home.androidtestgame;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
-import android.view.View;
-import android.widget.Button;
 
 /**
  * Created by Home on 21.2.2018 г..
