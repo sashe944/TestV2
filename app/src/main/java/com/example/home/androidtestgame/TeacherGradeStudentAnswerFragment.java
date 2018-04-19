@@ -58,7 +58,7 @@ public class TeacherGradeStudentAnswerFragment extends Fragment {
        /* answersList.add("1701737009");
         answersList.add("Отворена операционна система!");*/
 
-        lv_stuAnswers.setAdapter(new TeacherGradeStudentAnswerFragment.MyListAdapter(getContext(),R.layout.student_answer_layout,answersList));
+        lv_stuAnswers.setAdapter(new TeacherGradeStudentAnswerFragment.MyListAdapter(getContext(),R.layout.fragment_student_answer,answersList));
 
         return studentAnswerView;
     }
