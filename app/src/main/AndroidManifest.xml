@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.home.androidtestgame">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/test_game"
@@ -24,9 +26,8 @@
             android:label="@string/title_activity_teacher_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".TabHostActivity">
-            <intent-filter>
+           <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
