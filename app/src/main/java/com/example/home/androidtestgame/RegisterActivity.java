@@ -16,12 +16,15 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.gson.GsonBuilder;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -38,7 +41,9 @@ public class RegisterActivity extends AppCompatActivity {
     RadioButton gender;
     RadioGroup studentSex;
 
-    private static final String URL = "http://192.168.0.101:8080/TestV2Server/";
+  //  private static final String URL = "http://192.168.0.108:8080/TestV2Server/";
+   // private static final String URL = "http://192.168.0.102:8080/TestV2Server/";
+      private static final String URL ="10.168.160.102:8080/TestV2";
     private static final String TAG = "RegisterActivity";
 
     @Override
@@ -96,8 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
                 new RegisterAsyncTask(FNumber,FullName,Pass,Choice,Sex).execute();
 
 
-                Intent menuIntent = new Intent(RegisterActivity.this, MenuActivity.class);
-                startActivity(menuIntent);
+
 
             }
         });
@@ -151,12 +155,27 @@ public class RegisterActivity extends AppCompatActivity {
             BufferedReader br;
 
             try{
-                url = new URL(URL+"UserRegisterServlet" +
-                        "?FacultyNumber=" + FacultyNumber + "&Name=" + FullName + "&Password=" +Password
-                        +"&Gender=" + Sex + "&UserTypeID="+StudentChoice);
+                url = new URL(URL+"UserRegisterServlet" );
 
                 urlConnection = (HttpURLConnection) url.openConnection();
                 Log.d(TAG, "url: " + url.toString());
+
+                urlConnection.setRequestMethod("POST");
+                User user = new User();
+                user.Name = Name.getText().toString();
+                user.FacultyNumber = FNumber.getText().toString();
+                user.Password = Password;
+                user.UserTypeID = StudentChoice;
+                user.Gender = Sex;
+
+                String creds = new GsonBuilder().create().toJson(user);
+
+                byte[] outputInBytes = creds.getBytes("UTF-8");
+                OutputStream os = urlConnection.getOutputStream();
+                os.write( outputInBytes );
+                os.close();
+
+
                 br = new BufferedReader( new InputStreamReader( urlConnection.getInputStream()));
 
                 StringBuilder sb = new StringBuilder();
@@ -184,27 +203,9 @@ public class RegisterActivity extends AppCompatActivity {
 
             Log.d(TAG, "content: " + content);
 
-            try{
-                JSONObject res = new JSONObject(content);
-                User user = new User();
-               user.FacultyNumber = res.getString("FacultyNumber");
-               user.Name = res.getString("Name");
-               user.Password = res.getString("Password");
-               user.Gender = res.getString("Gender");
-               user.UserTypeID = res.getString("UserTypeID");
-                user.id = res.getLong("_id");
+            Intent menuIntent = new Intent(RegisterActivity.this, MenuActivity.class);
+            startActivity(menuIntent);
 
-                if(user.id!=0){
-                    Intent intent = new Intent(RegisterActivity.this,MenuActivity.class);
-                   /* intent.putExtra("player", u);*/
-                    startActivity(intent);
-                }else{
-                    Toast.makeText(RegisterActivity.this, "Error registering!", Toast.LENGTH_LONG).show();
-
-                }
-            }catch(JSONException e){
-                Log.wtf("WRONG!", e.getMessage());
-            }
         }
     }
 }

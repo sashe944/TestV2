@@ -11,12 +11,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.GsonBuilder;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -26,9 +29,10 @@ import static com.example.home.androidtestgame.DBHelper.User;
 public class LogInActivity extends AppCompatActivity {
 
 
-    private static final String URL = "http://192.168.0.101:8080/TestV2Server/";
+    //private static final String URL = "http://192.168.0.108:8080/TestV2Server/";
+    //private static final String URL = "http://192.168.0.102:8080/TestV2Server/";
     private static final String TAG = "LogInActivity";
-   // public static final String URL = "http://10.168.160.101:8080/TestV2Server/";
+    public static final String URL = "http://10.168.160.102:8080/TestV2/";
     DBHelper MyHelper;
 
     Button register;
@@ -110,11 +114,22 @@ public class LogInActivity extends AppCompatActivity {
             BufferedReader br;
 
             try{
-                url = new URL( URL + "UserLogInServlet?Password=" + Password + "&FacultyNumber="+stuFacultyNumber );
+                url = new URL( URL + "UserLogInServlet" );
+
                 Log.d(TAG, "url: " + url.toString());
                 urlConnection = (HttpURLConnection)
                         url.openConnection();
+                urlConnection.setRequestMethod("POST");
+                User user = new User();
+                user.Password = password.getText().toString();
+                user.FacultyNumber = fNumber.getText().toString();
 
+                String creds = new GsonBuilder().create().toJson(user);
+
+                byte[] outputInBytes = creds.getBytes("UTF-8");
+                OutputStream os = urlConnection.getOutputStream();
+                os.write( outputInBytes );
+                os.close();
                 br = new BufferedReader
                         (new InputStreamReader(
                                 urlConnection.getInputStream()
@@ -144,32 +159,6 @@ public class LogInActivity extends AppCompatActivity {
             dialogLogIn.dismiss();
 
             Log.d(TAG, "result: " + result);
-
-            try{
-                JSONObject resultJson = new JSONObject(result);
-                Log.d(TAG, "json: " + resultJson);
-                User user = new User();
-                user.Password= resultJson.getString("Password");
-                user.FacultyNumber = resultJson.getString("FacultyNumber");
-                user.id = resultJson.getLong("_id");
-
-
-                if(user.id != 0){
-                    Intent intent = new Intent(LogInActivity.this,
-                            MenuActivity.class);
-
-                   /* intent.putExtra("player", user);*/
-
-                    startActivity(intent);
-                }else{
-                    Toast.makeText(LogInActivity.this,
-                            "Wrong Password or FacultyNumber!",
-                            Toast.LENGTH_LONG).show();
-                }
-
-            }catch (JSONException e){
-                Log.wtf("WRONG!", e.getMessage());
-            }
 
         }
     }
