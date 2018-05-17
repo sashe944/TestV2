@@ -25,7 +25,8 @@ import java.net.URL;
 public class TeacherLogInActivity extends AppCompatActivity {
 
     private static final String TAG = "TeacherLogInActivity";
-    public static final String URL = "http://10.168.160.102:8080/TestV2/";
+    //public static final String URL = "http://10.168.160.102:8080/TestV2/";
+  private static final String URL ="http://192.168.0.110:8080/TestV2Server/";
 
     Button teacher_log_in;
     EditText teacherName, teacherPassword;

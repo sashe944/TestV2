@@ -41,10 +41,11 @@ public class RegisterActivity extends AppCompatActivity {
     RadioButton gender;
     RadioGroup studentSex;
 
-  //  private static final String URL = "http://192.168.0.108:8080/TestV2Server/";
-   // private static final String URL = "http://192.168.0.102:8080/TestV2Server/";
-      private static final String URL ="10.168.160.102:8080/TestV2";
-    private static final String TAG = "RegisterActivity";
+     //private static final String URL = "http://192.168.0.108:8080/TestV2Server/";
+     //private static final String URL = "http://192.168.0.102:8080/TestV2Server/";
+     // private static final String URL ="10.168.160.102:8080/TestV2";
+     private static final String URL ="http://192.168.0.110:8080/TestV2Server/";
+     private static final String TAG = "RegisterActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 spinnerChoice = spinner.getSelectedItem().toString();
+
             }
 
             @Override
@@ -94,10 +96,10 @@ public class RegisterActivity extends AppCompatActivity {
                 String FullName = studentName;
                 String FNumber = facultyNumber;
                 String Pass = studentPassword;
-                String Choice = spinnerChoice;
+                Long Choice = Long.valueOf(spinnerChoice);
                 String Sex = gender.getText().toString();
 
-               // MyHelper.addStudent(fNumber, fullName, pass, choice, sex);
+               // MyHelper.addStudent(FNumber, FullName, Pass, String.valueOf(Choice), Sex);
                 new RegisterAsyncTask(FNumber,FullName,Pass,Choice,Sex).execute();
 
 
@@ -124,11 +126,11 @@ public class RegisterActivity extends AppCompatActivity {
         String FacultyNumber;
         String FullName;
         String Password;
-        String StudentChoice;
+        long StudentChoice;
         String Sex;
         String content;
 
-        public RegisterAsyncTask(String FacultyNumber,String FullName,String Password,String StudentChoice,String Sex ) {
+        public RegisterAsyncTask(String FacultyNumber,String FullName,String Password, long StudentChoice,String Sex ) {
 
             this.FacultyNumber = FacultyNumber;
             this.FullName = FullName;
@@ -143,7 +145,7 @@ public class RegisterActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            registerProgressDialog.setTitle("Registering the player! Please wait...!");
+            registerProgressDialog.setTitle("Registering the user! Please wait...!");
             registerProgressDialog.setCanceledOnTouchOutside(false);
             registerProgressDialog.show();
         }
@@ -168,9 +170,9 @@ public class RegisterActivity extends AppCompatActivity {
                 user.UserTypeID = StudentChoice;
                 user.Gender = Sex;
 
-                String creds = new GsonBuilder().create().toJson(user);
+                String credentials = new GsonBuilder().create().toJson(user);
 
-                byte[] outputInBytes = creds.getBytes("UTF-8");
+                byte[] outputInBytes = credentials.getBytes("UTF-8");
                 OutputStream os = urlConnection.getOutputStream();
                 os.write( outputInBytes );
                 os.close();

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "Test2NDVersionDb.db";
+    public static final String DATABASE_NAME = "TestV2.db";
     public static final int DATABASE_VERSION = 1;
 
 
@@ -55,7 +55,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(selectQuery,null);
         if(cursor.getCount()>0){
             while(cursor.moveToNext()){
-                String type = cursor.getString(cursor.getColumnIndex("Name"));
+                String type = cursor.getString(cursor.getColumnIndex("_id"));
                 userTypes.add(type);
             }
         }

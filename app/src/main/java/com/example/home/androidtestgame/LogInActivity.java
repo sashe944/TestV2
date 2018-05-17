@@ -32,7 +32,8 @@ public class LogInActivity extends AppCompatActivity {
     //private static final String URL = "http://192.168.0.108:8080/TestV2Server/";
     //private static final String URL = "http://192.168.0.102:8080/TestV2Server/";
     private static final String TAG = "LogInActivity";
-    public static final String URL = "http://10.168.160.102:8080/TestV2/";
+    //public static final String URL = "http://10.168.160.102:8080/TestV2/";
+  private static final String URL ="http://192.168.0.110:8080/TestV2Server/";
     DBHelper MyHelper;
 
     Button register;

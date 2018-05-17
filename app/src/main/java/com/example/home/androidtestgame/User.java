@@ -5,6 +5,6 @@ package com.example.home.androidtestgame;
  */
 
 public class User {
-    long id;
-    String FacultyNumber,Name,Password,Gender,UserTypeID;;
+    long id,UserTypeID;
+    String FacultyNumber,Name,Password,Gender;
 }
