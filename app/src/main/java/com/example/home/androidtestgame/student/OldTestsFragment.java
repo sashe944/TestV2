@@ -1,4 +1,4 @@
-package com.example.home.androidtestgame;
+package com.example.home.androidtestgame.student;
 
 
 import android.os.Bundle;
@@ -9,6 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.support.v4.app.Fragment;
+
+import com.example.home.androidtestgame.R;
+
 import java.util.ArrayList;
 
 

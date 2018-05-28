@@ -11,26 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogInActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".StudentStatusActivity" />
+        <activity android:name=".student.LogInActivity" />
+        <activity android:name=".student.RegisterActivity" />
+        <activity android:name=".student.StudentStatusActivity" />
         <activity android:name=".Viewing_Student_Results_Activity" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".student.MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TestActivity" />
-        <activity android:name=".TeacherLogInActivity" />
+        <activity android:name=".student.TestActivity" />
+        <activity android:name=".teacher.TeacherLogInActivity" />
         <activity
-            android:name=".TeacherMenuActivity"
+            android:name=".teacher.TeacherMenuActivity"
             android:label="@string/title_activity_teacher_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TabHostActivity">
-           <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".AnswerPopupActivity"
             android:theme="@style/AppTheme.CustomTheme" />
@@ -39,6 +33,12 @@
             android:theme="@style/AppTheme.CustomTheme" />
         <activity android:name=".TeacherGradeStudentsAnswerActivity" />
         <activity android:name=".TeacherViewTestResultsActivity" />
+        <activity android:name=".tabHost.tabHostActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

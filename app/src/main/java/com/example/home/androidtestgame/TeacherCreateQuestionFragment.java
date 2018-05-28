@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.home.androidtestgame.teacher.TeacherMenuActivity;
+
 import java.util.ArrayList;
 
 
@@ -28,14 +30,12 @@ public class TeacherCreateQuestionFragment extends Fragment {
     ArrayList<String> list = new ArrayList<>();
 
     public TeacherCreateQuestionFragment() {
-        // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View questionView = inflater.inflate(R.layout.fragment_teacher_create_question, container, false);
 
         lv_test_answers= questionView.findViewById(R.id.lv_answers);

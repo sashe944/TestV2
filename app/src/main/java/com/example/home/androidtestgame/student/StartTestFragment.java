@@ -1,4 +1,4 @@
-package com.example.home.androidtestgame;
+package com.example.home.androidtestgame.student;
 
 
 import android.content.Intent;
@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.home.androidtestgame.R;
+import com.example.home.androidtestgame.student.TestActivity;
 
 import java.util.ArrayList;
 

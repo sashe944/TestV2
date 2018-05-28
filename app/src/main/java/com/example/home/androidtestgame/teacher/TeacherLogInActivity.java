@@ -1,4 +1,4 @@
-package com.example.home.androidtestgame;
+package com.example.home.androidtestgame.teacher;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -9,12 +9,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.example.home.androidtestgame.R;
+import com.example.home.androidtestgame.constants.Constants;
+import com.example.home.androidtestgame.objects.Teacher;
+import com.example.home.androidtestgame.objects.User;
+import com.example.home.androidtestgame.student.LogInActivity;
 import com.google.gson.GsonBuilder;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,77 +25,56 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static com.example.home.androidtestgame.DBHelper.User;
 
-public class LogInActivity extends AppCompatActivity {
+public class TeacherLogInActivity extends AppCompatActivity {
 
+    private static final String TAG = "TeacherLogInActivity";
 
-    //private static final String URL = "http://192.168.0.108:8080/TestV2Server/";
-    //private static final String URL = "http://192.168.0.102:8080/TestV2Server/";
-    private static final String TAG = "LogInActivity";
-    //public static final String URL = "http://10.168.160.102:8080/TestV2/";
-  private static final String URL ="http://192.168.0.110:8080/TestV2Server/";
-    DBHelper MyHelper;
-
-    Button register;
-    Button login;
-
-    String studentPassword,studentFacultyNumber;
-    EditText password,fNumber;
+    Button teacher_log_in;
+    EditText teacherName, teacherPassword;
+    String TeacherName, TeacherPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_in);
+        setContentView(R.layout.activity_teacher_log_in);
 
-       //MyHelper = new DBHelper(this);
+        teacher_log_in = findViewById(R.id.btn_log_in);
+        teacherName = findViewById(R.id.et_teacher_name);
+        teacherPassword = findViewById(R.id.et_teacher_password);
 
-        register = findViewById(R.id.btn_register);
-        login = findViewById(R.id.btn_log_in);
-
-        password = findViewById(R.id.et_student_password);
-        fNumber = findViewById(R.id.et_fnumber);
-
-        register.setOnClickListener(onClickListener);
-        login.setOnClickListener(onClickListener);
+        teacher_log_in.setOnClickListener(onClickListener);
     }
-    Intent intent = null;
+
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
-            if(v.getId()== R.id.btn_register){
+            TeacherName = teacherName.getText().toString();
+            TeacherPassword = teacherPassword.getText().toString();
 
-                intent = new Intent(LogInActivity.this, RegisterActivity.class);
+            if (!TeacherName.equals("") && !TeacherPassword.equals("")) {
+                //TODO:AsyncTask inicialized here
+                new TeacherLoginAsyncTask(TeacherName,TeacherPassword).execute();
 
-
-//                    MyHelper.LogInStudent(studentPassword, studentFacultyNumber);
-
-            }else {
-                studentFacultyNumber = fNumber.getText().toString();
-                studentPassword = password.getText().toString();
-
-                if(!studentFacultyNumber.equals("") && !studentPassword.equals("")){
-                    new LoginAsyncTask(studentFacultyNumber,studentPassword).execute();
-                    intent = new Intent(LogInActivity.this, StudentStatusActivity.class);
-                }
+                Intent intent = new Intent(TeacherLogInActivity.this, TeacherMenuActivity.class);
+                startActivity(intent);
             }
-            startActivity(intent);
         }
     };
 
-    private class LoginAsyncTask extends AsyncTask<Void, Void , Void> {
+    private class TeacherLoginAsyncTask extends AsyncTask<Void, Void , Void> {
 
         ProgressDialog dialogLogIn =
-                new ProgressDialog(LogInActivity.this);
-        String Password;
-        String stuFacultyNumber;
+                new ProgressDialog(TeacherLogInActivity.this);
+
+        String password,name;
         String result;
 
-        public LoginAsyncTask(String stuFacultyNumber, String Password) {
+        public TeacherLoginAsyncTask(String name, String password) {
 
-                this.stuFacultyNumber = stuFacultyNumber;
-                this.Password = Password;
+            this.name = name;
+            this.password = password;
 
         }
 
@@ -115,22 +95,24 @@ public class LogInActivity extends AppCompatActivity {
             BufferedReader br;
 
             try{
-                url = new URL( URL + "UserLogInServlet" );
+                url = new URL( Constants.URL + "TeacherLogInServlet" );
 
                 Log.d(TAG, "url: " + url.toString());
                 urlConnection = (HttpURLConnection)
                         url.openConnection();
                 urlConnection.setRequestMethod("POST");
-                User user = new User();
-                user.Password = password.getText().toString();
-                user.FacultyNumber = fNumber.getText().toString();
 
-                String creds = new GsonBuilder().create().toJson(user);
+               Teacher teacher = new Teacher();
+                teacher.password =  teacherPassword.getText().toString();
+                teacher.name = teacherName.getText().toString();
+
+                String creds = new GsonBuilder().create().toJson(teacher);
 
                 byte[] outputInBytes = creds.getBytes("UTF-8");
                 OutputStream os = urlConnection.getOutputStream();
                 os.write( outputInBytes );
                 os.close();
+
                 br = new BufferedReader
                         (new InputStreamReader(
                                 urlConnection.getInputStream()

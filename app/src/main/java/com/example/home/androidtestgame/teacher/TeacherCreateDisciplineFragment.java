@@ -1,4 +1,4 @@
-package com.example.home.androidtestgame;
+package com.example.home.androidtestgame.teacher;
 
 
 import android.app.ProgressDialog;
@@ -13,6 +13,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.home.androidtestgame.R;
+import com.example.home.androidtestgame.constants.Constants;
+import com.example.home.androidtestgame.objects.Subject;
+import com.example.home.androidtestgame.teacher.TeacherMenuActivity;
 import com.google.gson.GsonBuilder;
 
 import java.io.BufferedReader;
@@ -34,7 +38,6 @@ public class TeacherCreateDisciplineFragment extends Fragment {
     EditText disciplineName;
     EditText disciplineDescription;
 
-    private static final String URL ="http://192.168.0.110:8080/TestV2Server/";
     private static final String TAG = "TeacherCreateDiscipline";
 
     public TeacherCreateDisciplineFragment() {
@@ -109,15 +112,15 @@ public class TeacherCreateDisciplineFragment extends Fragment {
             BufferedReader br;
 
             try{
-                url = new URL(URL+"SubjectRegisterServlet" );
+                url = new URL(Constants.URL+"SubjectRegisterServlet" );
 
                 urlConnection = (HttpURLConnection) url.openConnection();
                 Log.d(TAG, "url: " + url.toString());
 
                 urlConnection.setRequestMethod("POST");
                 Subject subject = new Subject();
-                subject.Name = disciplineName.getText().toString();
-                subject.Description = disciplineDescription.getText().toString();
+                subject.name = disciplineName.getText().toString();
+                subject.description = disciplineDescription.getText().toString();
 
                 String createDiscipline = new GsonBuilder().create().toJson(subject);
 

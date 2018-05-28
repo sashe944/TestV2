@@ -1,4 +1,4 @@
-package com.example.home.androidtestgame;
+package com.example.home.androidtestgame.student;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -9,8 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
+import com.example.home.androidtestgame.R;
+import com.example.home.androidtestgame.constants.Constants;
+import com.example.home.androidtestgame.objects.User;
 import com.google.gson.GsonBuilder;
 
 import java.io.BufferedReader;
@@ -21,58 +23,64 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+public class LogInActivity extends AppCompatActivity {
 
-public class TeacherLogInActivity extends AppCompatActivity {
 
-    private static final String TAG = "TeacherLogInActivity";
-    //public static final String URL = "http://10.168.160.102:8080/TestV2/";
-  private static final String URL ="http://192.168.0.110:8080/TestV2Server/";
 
-    Button teacher_log_in;
-    EditText teacherName, teacherPassword;
-    String TeacherName, TeacherPassword;
+    private static final String TAG = "LogInActivity";
+
+    Button register;
+    Button login;
+
+    String studentPassword,studentFacultyNumber;
+    EditText password,fNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_log_in);
+        setContentView(R.layout.activity_log_in);
 
-        teacher_log_in = findViewById(R.id.btn_log_in);
-        teacherName = findViewById(R.id.et_teacher_name);
-        teacherPassword = findViewById(R.id.et_teacher_password);
+        register = findViewById(R.id.btn_register);
+        login = findViewById(R.id.btn_log_in);
 
-        teacher_log_in.setOnClickListener(onClickListener);
+        password = findViewById(R.id.et_student_password);
+        fNumber = findViewById(R.id.et_fnumber);
+
+        register.setOnClickListener(onClickListener);
+        login.setOnClickListener(onClickListener);
     }
-
+    Intent intent = null;
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
-            TeacherName = teacherName.getText().toString();
-            TeacherPassword = teacherPassword.getText().toString();
+            if(v.getId()== R.id.btn_register){
+                intent = new Intent(LogInActivity.this, RegisterActivity.class);
+            }else {
+                studentFacultyNumber = fNumber.getText().toString();
+                studentPassword = password.getText().toString();
 
-            if (!TeacherName.equals("") && !TeacherPassword.equals("")) {
-                //TODO:AsyncTask inicialized here
-                new TeacherLoginAsyncTask(TeacherName,TeacherPassword).execute();
-
-                Intent intent = new Intent(TeacherLogInActivity.this, TeacherMenuActivity.class);
-                startActivity(intent);
+                if(!studentFacultyNumber.equals("") && !studentPassword.equals("")){
+                    new LoginAsyncTask(studentFacultyNumber,studentPassword).execute();
+                    intent = new Intent(LogInActivity.this, StudentStatusActivity.class);
+                }
             }
+            startActivity(intent);
         }
     };
 
-    private class TeacherLoginAsyncTask extends AsyncTask<Void, Void , Void> {
+    private class LoginAsyncTask extends AsyncTask<Void, Void , Void> {
 
         ProgressDialog dialogLogIn =
-                new ProgressDialog(TeacherLogInActivity.this);
+                new ProgressDialog(LogInActivity.this);
         String Password;
-        String Name;
+        String stuFacultyNumber;
         String result;
 
-        public TeacherLoginAsyncTask(String Name, String Password) {
+        public LoginAsyncTask(String stuFacultyNumber, String Password) {
 
-            this.Name= Name;
-            this.Password = Password;
+                this.stuFacultyNumber = stuFacultyNumber;
+                this.Password = Password;
 
         }
 
@@ -93,17 +101,17 @@ public class TeacherLogInActivity extends AppCompatActivity {
             BufferedReader br;
 
             try{
-                url = new URL( URL + "UserLogInServlet" );
+                url = new URL( Constants.URL + "UserLogInServlet" );
+
                 Log.d(TAG, "url: " + url.toString());
                 urlConnection = (HttpURLConnection)
                         url.openConnection();
                 urlConnection.setRequestMethod("POST");
+                User user = new User();
+                user.password = password.getText().toString();
+                user.facultyNumber = fNumber.getText().toString();
 
-                Teacher teacher = new Teacher();
-                teacher.teacherName = Name;
-                teacher.teacherPassword = Password;
-
-                String creds = new GsonBuilder().create().toJson(teacher);
+                String creds = new GsonBuilder().create().toJson(user);
 
                 byte[] outputInBytes = creds.getBytes("UTF-8");
                 OutputStream os = urlConnection.getOutputStream();

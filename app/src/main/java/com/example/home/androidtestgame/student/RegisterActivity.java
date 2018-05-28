@@ -1,4 +1,4 @@
-package com.example.home.androidtestgame;
+package com.example.home.androidtestgame.student;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -14,12 +14,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Toast;
 
+import com.example.home.androidtestgame.DBHelper;
+import com.example.home.androidtestgame.R;
+import com.example.home.androidtestgame.constants.Constants;
+import com.example.home.androidtestgame.objects.User;
 import com.google.gson.GsonBuilder;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,10 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
     RadioButton gender;
     RadioGroup studentSex;
 
-     //private static final String URL = "http://192.168.0.108:8080/TestV2Server/";
-     //private static final String URL = "http://192.168.0.102:8080/TestV2Server/";
-     // private static final String URL ="10.168.160.102:8080/TestV2";
-     private static final String URL ="http://192.168.0.110:8080/TestV2Server/";
      private static final String TAG = "RegisterActivity";
 
     @Override
@@ -99,7 +95,6 @@ public class RegisterActivity extends AppCompatActivity {
                 Long Choice = Long.valueOf(spinnerChoice);
                 String Sex = gender.getText().toString();
 
-               // MyHelper.addStudent(FNumber, FullName, Pass, String.valueOf(Choice), Sex);
                 new RegisterAsyncTask(FNumber,FullName,Pass,Choice,Sex).execute();
 
 
@@ -157,18 +152,18 @@ public class RegisterActivity extends AppCompatActivity {
             BufferedReader br;
 
             try{
-                url = new URL(URL+"UserRegisterServlet" );
+                url = new URL(Constants.URL+"UserRegisterServlet" );
 
                 urlConnection = (HttpURLConnection) url.openConnection();
                 Log.d(TAG, "url: " + url.toString());
 
                 urlConnection.setRequestMethod("POST");
                 User user = new User();
-                user.Name = Name.getText().toString();
-                user.FacultyNumber = FNumber.getText().toString();
-                user.Password = Password;
-                user.UserTypeID = StudentChoice;
-                user.Gender = Sex;
+                user.name = Name.getText().toString();
+                user.facultyNumber = FNumber.getText().toString();
+                user.password = Password;
+                user.userTypeID = StudentChoice;
+                user.gender = Sex;
 
                 String credentials = new GsonBuilder().create().toJson(user);
 
