@@ -91,7 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Long Choice = Long.valueOf(spinnerChoice);
                 String Sex = gender.getText().toString();
 
-                if(!validateUsername() | !validatePassword()){
+                if(!validateUsername() | !validatePassword() | validateFacultyNumber()){
                     return;
                 }else{
                     new RegisterAsyncTask(FNumber,FullName,Pass,Choice,Sex).execute();
@@ -134,7 +134,15 @@ public class RegisterActivity extends AppCompatActivity {
             return true;
         }
     }
-
+    private boolean validateFacultyNumber() {
+        if (facultyNumber.equals(FNumber.getText().toString())) {
+            FNumber.setError("Вече има регистриран такъв факултетен номер!");
+            return false;
+        } else {
+            FNumber.setError(null);
+            return true;
+        }
+    }
     private class RegisterAsyncTask extends AsyncTask<Void, Void, Void> {
 
         String FacultyNumber;

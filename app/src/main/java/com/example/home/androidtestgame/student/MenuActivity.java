@@ -54,6 +54,10 @@ public class MenuActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fillThisPlaceWithFragment,startTestFragment);
             fragmentTransaction.commit();
         }
+        else if(id==R.id.nav_status){
+            Intent intent = new Intent(MenuActivity.this, StudentStatusActivity.class);
+            startActivity(intent);
+        }
         else if(id==R.id.nav_log_out){
            Intent intent = new Intent(MenuActivity.this, tabHostActivity.class);
             startActivity(intent);

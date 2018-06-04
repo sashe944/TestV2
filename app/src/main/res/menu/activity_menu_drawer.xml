@@ -14,6 +14,9 @@
             android:id="@+id/nav_start_test"
             android:title="Започни тест" />
         <item
+            android:id="@+id/nav_status"
+            android:title="Виж статус" />
+        <item
             android:id="@+id/nav_log_out"
             android:title="Изход" />
     </group>

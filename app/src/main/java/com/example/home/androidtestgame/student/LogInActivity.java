@@ -75,7 +75,7 @@ public class LogInActivity extends AppCompatActivity {
                 else{
                     Intent intent = null;
                     new LoginAsyncTask(studentFacultyNumber,studentPassword).execute();
-                    intent = new Intent(LogInActivity.this, StudentStatusActivity.class);
+                    intent = new Intent(LogInActivity.this, MenuActivity.class);
                     startActivity(intent);
                 }
                /* if(!studentFacultyNumber.equals("") && !studentPassword.equals("")){
