@@ -3,6 +3,8 @@ package com.example.home.androidtestgame.student;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,17 +12,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-
 import com.example.home.androidtestgame.DBHelper;
 import com.example.home.androidtestgame.R;
 import com.example.home.androidtestgame.constants.Constants;
 import com.example.home.androidtestgame.objects.User;
 import com.google.gson.GsonBuilder;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -34,9 +33,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     Button ok;
     Button cancel;
-    DBHelper MyHelper;
+   DBHelper MyHelper;
     Spinner spinner;
-    EditText Name, FNumber, Password;
+    TextInputEditText Name, FNumber, Password;
     String spinnerChoice, studentName, facultyNumber, studentPassword;
     RadioButton gender;
     RadioGroup studentSex;
@@ -74,20 +73,17 @@ public class RegisterActivity extends AppCompatActivity {
                 //NOTHING YET
             }
         });
-
         studentName = Name.getText().toString();
         facultyNumber = FNumber.getText().toString();
         studentPassword = Password.getText().toString();
         gender = findViewById(studentSex.getCheckedRadioButtonId());
 
-
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                studentName = Name.getText().toString();
-                facultyNumber = FNumber.getText().toString();
-                studentPassword = Password.getText().toString();
+                studentName = Name.getText().toString().trim();
+                facultyNumber = FNumber.getText().toString().trim();
+                studentPassword = Password.getText().toString().trim();
 
                 String FullName = studentName;
                 String FNumber = facultyNumber;
@@ -95,10 +91,11 @@ public class RegisterActivity extends AppCompatActivity {
                 Long Choice = Long.valueOf(spinnerChoice);
                 String Sex = gender.getText().toString();
 
-                new RegisterAsyncTask(FNumber,FullName,Pass,Choice,Sex).execute();
-
-
-
+                if(!validateUsername() | !validatePassword()){
+                    return;
+                }else{
+                    new RegisterAsyncTask(FNumber,FullName,Pass,Choice,Sex).execute();
+                }
 
             }
         });
@@ -114,6 +111,28 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    private boolean validateUsername(){
+        if(studentName.isEmpty()){
+            Name.setError("Полето не може да бъде празно!");
+            return false;
+        }else if(studentName.length()>15){
+            Name.setError("Прекалено дълго име!");
+            return false;
+        }else{
+            Name.setError(null);
+            return true;
+        }
+    }
+    private boolean validatePassword() {
+        if (studentPassword.isEmpty()) {
+            Password.setError("Полето не може да бъде празно!");
+            return false;
+        } else {
+            Password.setError(null);
+            return true;
+        }
     }
 
     private class RegisterAsyncTask extends AsyncTask<Void, Void, Void> {

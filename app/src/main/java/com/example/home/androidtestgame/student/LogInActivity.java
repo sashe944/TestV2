@@ -32,6 +32,7 @@ public class LogInActivity extends AppCompatActivity {
     Button register;
     Button login;
 
+
     String studentPassword,studentFacultyNumber;
     EditText password,fNumber;
 
@@ -49,23 +50,39 @@ public class LogInActivity extends AppCompatActivity {
         register.setOnClickListener(onClickListener);
         login.setOnClickListener(onClickListener);
     }
-    Intent intent = null;
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
+
             if(v.getId()== R.id.btn_register){
-                intent = new Intent(LogInActivity.this, RegisterActivity.class);
+                Intent regIntent = null;
+                regIntent = new Intent(LogInActivity.this, RegisterActivity.class);
+                startActivity(regIntent);
             }else {
                 studentFacultyNumber = fNumber.getText().toString();
                 studentPassword = password.getText().toString();
 
-                if(!studentFacultyNumber.equals("") && !studentPassword.equals("")){
+                if(fNumber.length()==0){
+                    fNumber.setError("Enter at least 6 characters");
+                }
+                else if(password.length()==0){
+                    password.setError("Enter password");
+                }
+                /*else if(!studentPassword.equals(user.password)){
+                    password.setError("Not Correct Password");
+                }*/
+                else{
+                    Intent intent = null;
                     new LoginAsyncTask(studentFacultyNumber,studentPassword).execute();
                     intent = new Intent(LogInActivity.this, StudentStatusActivity.class);
+                    startActivity(intent);
                 }
+               /* if(!studentFacultyNumber.equals("") && !studentPassword.equals("")){
+                    new LoginAsyncTask(studentFacultyNumber,studentPassword).execute();
+                    intent = new Intent(LogInActivity.this, StudentStatusActivity.class);
+                }*/
             }
-            startActivity(intent);
         }
     };
 
@@ -84,7 +101,6 @@ public class LogInActivity extends AppCompatActivity {
 
         }
 
-        @Override
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(TAG, "Login in....");
@@ -92,6 +108,7 @@ public class LogInActivity extends AppCompatActivity {
             dialogLogIn.setCanceledOnTouchOutside(false);
             dialogLogIn.show();
         }
+
 
         @Override
         protected Void doInBackground(Void... voids) {

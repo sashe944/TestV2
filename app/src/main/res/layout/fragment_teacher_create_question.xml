@@ -22,7 +22,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/questionEditText"
             android:layout_width="match_parent"
             android:layout_height="92dp"
             android:ems="10"
@@ -37,7 +37,7 @@
             android:textSize="18sp" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/answersSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/answers"/>

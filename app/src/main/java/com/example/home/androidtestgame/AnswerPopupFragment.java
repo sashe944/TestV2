@@ -49,6 +49,8 @@ public class AnswerPopupFragment extends Fragment {
         });
 
         return answerPopupView;
+
     }
+    //TODO: HTTP POST Here for the answers
 
 }

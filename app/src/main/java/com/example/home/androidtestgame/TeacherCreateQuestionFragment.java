@@ -26,8 +26,8 @@ public class TeacherCreateQuestionFragment extends Fragment {
     Button cancelSavingQuestion;
 
     ListView lv_test_answers;
-    ArrayAdapter<String> adapter;
-    ArrayList<String> list = new ArrayList<>();
+    ArrayAdapter<String> answersAdapter;
+    ArrayList<String> listOfAnswers = new ArrayList<>();
 
     public TeacherCreateQuestionFragment() {
     }
@@ -41,12 +41,12 @@ public class TeacherCreateQuestionFragment extends Fragment {
         lv_test_answers= questionView.findViewById(R.id.lv_answers);
         cancelSavingQuestion = questionView.findViewById(R.id.btnCancelQuestion);
 
-        list.add("Добре съм");
-        list.add("На 23 години съм");
+        listOfAnswers.add("Добре съм");
+        listOfAnswers.add("На 23 години съм");
 
-        adapter = new ArrayAdapter<String>(getContext(),R.layout.questions_layout,R.id.tv_question_add,list);
+        answersAdapter = new ArrayAdapter<String>(getContext(),R.layout.questions_layout,R.id.tv_question_add, listOfAnswers);
 
-        lv_test_answers.setAdapter(adapter);
+        lv_test_answers.setAdapter(answersAdapter);
 
         giveAnswer = questionView.findViewById(R.id.btn_write_answer);
 
@@ -65,13 +65,9 @@ public class TeacherCreateQuestionFragment extends Fragment {
             }
         });
 
-
-
-
-
-
-
         return questionView;
     }
+    //TODO: HTTP POST HERE for the questions
+    //TODO HTTP GET QuestionType
 
 }
