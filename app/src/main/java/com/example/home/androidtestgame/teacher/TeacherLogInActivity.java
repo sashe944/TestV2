@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.home.androidtestgame.App;
 import com.example.home.androidtestgame.R;
 import com.example.home.androidtestgame.constants.Constants;
 import com.example.home.androidtestgame.objects.Teacher;
@@ -80,8 +81,6 @@ public class TeacherLogInActivity extends AppCompatActivity {
 
                 new TeacherLoginAsyncTask(TeacherName,TeacherPassword).execute();
 
-                Intent intent = new Intent(TeacherLogInActivity.this, TeacherMenuActivity.class);
-                startActivity(intent);
             }
         }
     };
@@ -163,9 +162,11 @@ public class TeacherLogInActivity extends AppCompatActivity {
             Log.d(TAG, "taking data");
             super.onPostExecute(aVoid);
             dialogLogIn.dismiss();
-
+            App.loggedUserId =  new GsonBuilder().create().fromJson(result, Teacher.class).id;
             Log.d(TAG, "result: " + result);
 
+            Intent intent = new Intent(TeacherLogInActivity.this, TeacherMenuActivity.class);
+            startActivity(intent);
         }
     }
 }
