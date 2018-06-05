@@ -10,12 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.home.androidtestgame.App;
 import com.example.home.androidtestgame.R;
 import com.example.home.androidtestgame.constants.Constants;
 import com.example.home.androidtestgame.objects.Teacher;
-import com.example.home.androidtestgame.objects.User;
-import com.example.home.androidtestgame.student.LogInActivity;
 import com.google.gson.GsonBuilder;
 
 import java.io.BufferedReader;
