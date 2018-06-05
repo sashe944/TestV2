@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     Button ok;
     Button cancel;
-   DBHelper MyHelper;
+    DBHelper MyHelper;
     Spinner spinner;
     TextInputEditText Name, FNumber, Password;
     String spinnerChoice, studentName, facultyNumber, studentPassword;

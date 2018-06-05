@@ -50,10 +50,27 @@ public class LogInActivity extends AppCompatActivity {
         register.setOnClickListener(onClickListener);
         login.setOnClickListener(onClickListener);
     }
+    private boolean validateFacultyNumber(){
+        if(studentFacultyNumber.isEmpty()){
+            fNumber.setError("Полето не може да бъде празно!");
+            return false;
+        }else{
+            fNumber.setError(null);
+            return true;
+        }
+    }
+    private boolean validatePassword(){
+        if(studentPassword.isEmpty()){
+            password.setError("Полето не може да бъде празно!");
+            return false;
+        }else{
+            password.setError(null);
+            return true;
+        }
+    }
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
 
             if(v.getId()== R.id.btn_register){
                 Intent regIntent = null;
@@ -63,25 +80,15 @@ public class LogInActivity extends AppCompatActivity {
                 studentFacultyNumber = fNumber.getText().toString();
                 studentPassword = password.getText().toString();
 
-                if(fNumber.length()==0){
-                    fNumber.setError("Enter at least 6 characters");
+                if(!validateFacultyNumber() | !validatePassword()){
+                    return;
                 }
-                else if(password.length()==0){
-                    password.setError("Enter password");
-                }
-                /*else if(!studentPassword.equals(user.password)){
-                    password.setError("Not Correct Password");
-                }*/
                 else{
                     Intent intent = null;
                     new LoginAsyncTask(studentFacultyNumber,studentPassword).execute();
                     intent = new Intent(LogInActivity.this, MenuActivity.class);
                     startActivity(intent);
                 }
-               /* if(!studentFacultyNumber.equals("") && !studentPassword.equals("")){
-                    new LoginAsyncTask(studentFacultyNumber,studentPassword).execute();
-                    intent = new Intent(LogInActivity.this, StudentStatusActivity.class);
-                }*/
             }
         }
     };

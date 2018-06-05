@@ -45,6 +45,27 @@ public class TeacherLogInActivity extends AppCompatActivity {
 
         teacher_log_in.setOnClickListener(onClickListener);
     }
+    private boolean validatePassword(){
+        if(TeacherPassword.isEmpty()){
+            teacherPassword.setError("Полето не може да бъде празно!");
+            return false;
+        }else{
+            teacherPassword.setError(null);
+            return true;
+        }
+    }
+    private boolean validateTeacherName(){
+        if(TeacherName.isEmpty()){
+            teacherName.setError("Полето не може да бъде празно!");
+            return false;
+        }else if(TeacherName.length()>15){
+            teacherName.setError("Прекалено дълго име!");
+            return false;
+        }else{
+            teacherName.setError(null);
+            return true;
+        }
+    }
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
@@ -53,8 +74,10 @@ public class TeacherLogInActivity extends AppCompatActivity {
             TeacherName = teacherName.getText().toString();
             TeacherPassword = teacherPassword.getText().toString();
 
-            if (!TeacherName.equals("") && !TeacherPassword.equals("")) {
-                //TODO:AsyncTask inicialized here
+            if (!validateTeacherName() | !validatePassword()) {
+                return;
+            }else{
+
                 new TeacherLoginAsyncTask(TeacherName,TeacherPassword).execute();
 
                 Intent intent = new Intent(TeacherLogInActivity.this, TeacherMenuActivity.class);

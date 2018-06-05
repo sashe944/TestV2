@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.home.androidtestgame.R;
+import com.example.home.androidtestgame.UpdateProfileActivity;
 import com.example.home.androidtestgame.tabHost.tabHostActivity;
 
 public class MenuActivity extends AppCompatActivity
@@ -39,7 +40,7 @@ public class MenuActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if(id==R.id.nav_profile){
-           Intent intent = new Intent(MenuActivity.this,RegisterActivity.class);
+           Intent intent = new Intent(MenuActivity.this,UpdateProfileActivity.class);
             startActivity(intent);
         }
         else if(id==R.id.nav_old_tests){
