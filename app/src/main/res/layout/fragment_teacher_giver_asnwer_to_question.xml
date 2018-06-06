@@ -6,9 +6,9 @@
     android:background="@drawable/background">
 
     <LinearLayout
-        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -17,28 +17,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Добави текст за  въпрос"
+            android:text="Добави отговор за въпрос"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/questionEditText"
+            android:id="@+id/answerEditText"
             android:layout_width="match_parent"
             android:layout_height="92dp"
             android:ems="10"
             android:inputType="textPersonName" />
 
-        <TextView
-            android:id="@+id/textView4"
+
+        <CheckBox
+            android:id="@+id/isCorrectAnswerCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Правилен ли е ?" />
+
+        <EditText
+            android:id="@+id/pointsEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="Избиране на типа на въпроса"
-            android:textSize="18sp" />
-
-        <Spinner
-            android:id="@+id/answersSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:hint="добави точки за този отговор"/>
 
     </LinearLayout>
 
@@ -50,7 +50,16 @@
 
         <Button
             android:textColor="#fff"
-            android:id="@+id/btnSaveQuestion"
+            android:id="@+id/btn_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttonstyleselector"
+            android:text="Излез" />
+
+        <Button
+            android:textColor="#fff"
+            android:id="@+id/btn_next_answer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -59,3 +68,4 @@
 
     </LinearLayout>
 </LinearLayout>
+

@@ -65,34 +65,6 @@
                     android:textColorHint="#2c5aff" />
             </android.support.design.widget.TextInputLayout>
 
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/text_input_repassword"
-                app:errorEnabled="true">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/et_repassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="5dp"
-                    android:hint="Повтори парола"
-                    android:inputType="textPassword"
-                    android:textColorHint="#2c5aff" />
-            </android.support.design.widget.TextInputLayout>
-
-            <TextView
-                android:id="@+id/tv_choose"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Избери"
-                android:textAlignment="center"
-                android:textSize="18dp" />
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -104,11 +76,6 @@
                 android:layout_height="wrap_content">
 
             </android.support.design.widget.TextInputLayout>
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/sp_typeSpinner"/>
 
             <RadioGroup
                 android:id="@+id/genderRadioGroup"

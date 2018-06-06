@@ -24,6 +24,7 @@ import android.widget.Spinner;
 import com.example.home.androidtestgame.App;
 import com.example.home.androidtestgame.QuestionsPopupActivity;
 import com.example.home.androidtestgame.R;
+import com.example.home.androidtestgame.TeacherCreateQuestionFragment;
 import com.example.home.androidtestgame.constants.Constants;
 import com.example.home.androidtestgame.objects.Subject;
 import com.example.home.androidtestgame.objects.TestHeader;
@@ -83,14 +84,14 @@ public class TeacherCreateTestFragment extends Fragment {
 
          disciplineSpinner = createTestView.findViewById(R.id.sp_disciplines);
         etTestName = createTestView.findViewById(R.id.testNameEditText);
-        etSingleAnswer = createTestView.findViewById(R.id.et_single);
+       /* etSingleAnswer = createTestView.findViewById(R.id.et_single);
         etMultipleAnswer = createTestView.findViewById(R.id.et_multiple);
-        etFreeTextAnswer = createTestView.findViewById(R.id.et_free);
+        etFreeTextAnswer = createTestView.findViewById(R.id.et_free);*/
 
 
         et_dateFrom = createTestView.findViewById(R.id.fromDateEditText);
         et_dateTo = createTestView.findViewById(R.id.toDateEditText);
-        listViewQuestions = createTestView.findViewById(R.id.lv_questions);
+       // listViewQuestions = createTestView.findViewById(R.id.lv_questions);
 
         et_dateTo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,9 +149,9 @@ public class TeacherCreateTestFragment extends Fragment {
                 testHeader.userID = App.loggedUserId;
                 testHeader.fromDate = dateFrom;
                 testHeader.toDate = dateTo;
-                testHeader.gradeFreeTextAnswer = Long.parseLong(etFreeTextAnswer.getText().toString());
+               /* testHeader.gradeFreeTextAnswer = Long.parseLong(etFreeTextAnswer.getText().toString());
                 testHeader.gradeMultipleAnswer = Long.parseLong(etMultipleAnswer.getText().toString());
-                testHeader.gradeSingleAnswer = Long.parseLong(etSingleAnswer.getText().toString());
+                testHeader.gradeSingleAnswer = Long.parseLong(etSingleAnswer.getText().toString());*/
 
                 new CreateTestHeaderAsyncTask().execute(testHeader);
             }
@@ -163,15 +164,15 @@ public class TeacherCreateTestFragment extends Fragment {
             }
         });
 
-        testQuestions = new ArrayList<>();
+      /*  testQuestions = new ArrayList<>();
         testQuestions.add("Kak си ?");
         testQuestions.add("Какво правиш ?");
-        testQuestions.add("На колко си ?");
+        testQuestions.add("На колко си ?");*/
 
-        questionAdapter = new ArrayAdapter<String>(getContext(),R.layout.question_row,R.id.tv_question, testQuestions);
-        listViewQuestions.setAdapter(questionAdapter);
-        sp_questionType = createTestView.findViewById(R.id.sp_question);
-        sp_questionType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*questionAdapter = new ArrayAdapter<String>(getContext(),R.layout.question_row,R.id.tv_question, testQuestions);
+        listViewQuestions.setAdapter(questionAdapter);*/
+        //sp_questionType = createTestView.findViewById(R.id.sp_question);
+    /*    sp_questionType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -183,7 +184,7 @@ public class TeacherCreateTestFragment extends Fragment {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });*/
          new GetSubjectsAsyncTask().execute();
         return createTestView;
     }
@@ -333,7 +334,7 @@ public class TeacherCreateTestFragment extends Fragment {
             Log.d(TAG, "tes header: " + result);
             dialogCreateTest.dismiss();
             TestHeader createdTestHeader = new GsonBuilder().create().fromJson(result, TestHeader.class);
-           long testId = createdTestHeader.id;
+            long testId = createdTestHeader.id;
         }
     }
 

@@ -18,6 +18,9 @@
             android:id="@+id/nav_create_discipline"
             android:title="Създай дисциплина" />
         <item
+            android:id="@+id/nav_give_answer"
+            android:title="Дай отговори" />
+        <item
             android:id="@+id/nav_grade"
             android:title="Оцени" />
         <item

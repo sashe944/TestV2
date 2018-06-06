@@ -5,13 +5,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@drawable/test_game"
         android:label="TestV2"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".App">
+        android:theme="@style/AppTheme">
         <activity android:name=".student.LogInActivity" />
         <activity android:name=".student.RegisterActivity" />
         <activity android:name=".student.StudentStatusActivity" />
@@ -41,7 +41,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UpdateProfileActivity"></activity>
+        <activity android:name=".UpdateProfileActivity" />
     </application>
 
 </manifest>

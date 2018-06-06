@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import com.example.home.androidtestgame.R;
 import com.example.home.androidtestgame.TeacherCreateQuestionFragment;
 import com.example.home.androidtestgame.TeacherGiveGradeFragment;
+import com.example.home.androidtestgame.TeacherGiverAnswerToQuestionFragment;
 import com.example.home.androidtestgame.tabHost.tabHostActivity;
 
 public class TeacherMenuActivity extends AppCompatActivity
@@ -53,6 +54,14 @@ public class TeacherMenuActivity extends AppCompatActivity
           TeacherCreateDisciplineFragment disciplineFragment = new TeacherCreateDisciplineFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fillThisContainerWithFragment,disciplineFragment);
+            fragmentTransaction.commit();
+
+        }
+
+        else if(id == R.id.nav_give_answer) {
+            TeacherGiverAnswerToQuestionFragment answerFragment = new TeacherGiverAnswerToQuestionFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fillThisContainerWithFragment, answerFragment);
             fragmentTransaction.commit();
         }
         else if(id==R.id.nav_create_test){
