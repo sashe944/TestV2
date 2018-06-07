@@ -100,7 +100,7 @@ public class TeacherLogInActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(TAG, "Login in....");
-            dialogLogIn.setTitle("Login in please wait!");
+            dialogLogIn.setTitle("Login in, please wait!");
             dialogLogIn.setCanceledOnTouchOutside(false);
             dialogLogIn.show();
         }

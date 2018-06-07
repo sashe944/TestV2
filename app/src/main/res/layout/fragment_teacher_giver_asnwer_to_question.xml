@@ -50,16 +50,16 @@
 
         <Button
             android:textColor="#fff"
-            android:id="@+id/btn_exit"
+            android:id="@+id/btn_new_answer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/buttonstyleselector"
-            android:text="Излез" />
+            android:text="Нов отговор" />
 
         <Button
             android:textColor="#fff"
-            android:id="@+id/btn_next_answer"
+            android:id="@+id/btn_save_question_with_all_answers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -9,6 +9,7 @@ import android.app.Application;
 public class App extends Application{
 
     public static long loggedUserId;
+    public static long testHeaderId;
 
     @Override
     public void onCreate() {

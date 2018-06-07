@@ -10,9 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.home.androidtestgame.OldTestsFragment;
 import com.example.home.androidtestgame.R;
+import com.example.home.androidtestgame.StudentStatusActivity;
 import com.example.home.androidtestgame.UpdateProfileActivity;
-import com.example.home.androidtestgame.tabHost.tabHostActivity;
+import com.example.home.androidtestgame.tabHost.TabHostActivity;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -60,7 +62,7 @@ public class MenuActivity extends AppCompatActivity
             startActivity(intent);
         }
         else if(id==R.id.nav_log_out){
-           Intent intent = new Intent(MenuActivity.this, tabHostActivity.class);
+           Intent intent = new Intent(MenuActivity.this, TabHostActivity.class);
             startActivity(intent);
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

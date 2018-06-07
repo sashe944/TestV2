@@ -11,10 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.home.androidtestgame.R;
-import com.example.home.androidtestgame.TeacherCreateQuestionFragment;
 import com.example.home.androidtestgame.TeacherGiveGradeFragment;
-import com.example.home.androidtestgame.TeacherGiverAnswerToQuestionFragment;
-import com.example.home.androidtestgame.tabHost.tabHostActivity;
+import com.example.home.androidtestgame.tabHost.TabHostActivity;
 
 public class TeacherMenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -57,13 +55,6 @@ public class TeacherMenuActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         }
-
-        else if(id == R.id.nav_give_answer) {
-            TeacherGiverAnswerToQuestionFragment answerFragment = new TeacherGiverAnswerToQuestionFragment();
-            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fillThisContainerWithFragment, answerFragment);
-            fragmentTransaction.commit();
-        }
         else if(id==R.id.nav_create_test){
            TeacherCreateTestFragment createTestFragment = new TeacherCreateTestFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -85,7 +76,7 @@ public class TeacherMenuActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         }else if(id==R.id.nav_log_out){
-            Intent intent = new Intent(TeacherMenuActivity.this,tabHostActivity.class);
+            Intent intent = new Intent(TeacherMenuActivity.this,TabHostActivity.class);
             startActivity(intent);
         }
 

@@ -1,4 +1,4 @@
-package com.example.home.androidtestgame.student;
+package com.example.home.androidtestgame;
 
 
 import android.os.Bundle;

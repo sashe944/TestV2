@@ -18,13 +18,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.example.home.androidtestgame.App;
-import com.example.home.androidtestgame.QuestionsPopupActivity;
 import com.example.home.androidtestgame.R;
-import com.example.home.androidtestgame.TeacherCreateQuestionFragment;
 import com.example.home.androidtestgame.constants.Constants;
 import com.example.home.androidtestgame.objects.Subject;
 import com.example.home.androidtestgame.objects.TestHeader;
@@ -39,7 +36,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -56,14 +52,10 @@ public class TeacherCreateTestFragment extends Fragment {
     Button saveTest;
     Button cancelSavingTest;
     EditText et_dateFrom;
-    EditText et_dateTo, etTestName,etSingleAnswer,etMultipleAnswer,etFreeTextAnswer;
+    EditText et_dateTo, etTestName;
     int year_fromDate, month_fromDate, day_fromDate;
     int year_toDate, month_toDate, day_toDate;
-    ArrayAdapter<String> questionAdapter;
     ArrayAdapter<Subject> disciplineAdapter;
-    ArrayList<String> testQuestions;
-    ListView listViewQuestions;
-    Spinner sp_questionType;
     Spinner disciplineSpinner;
     String dateFrom, dateTo;
     DatePickerDialog.OnDateSetListener dateFromSetListener,dateToSetListener;
@@ -84,14 +76,8 @@ public class TeacherCreateTestFragment extends Fragment {
 
          disciplineSpinner = createTestView.findViewById(R.id.sp_disciplines);
         etTestName = createTestView.findViewById(R.id.testNameEditText);
-       /* etSingleAnswer = createTestView.findViewById(R.id.et_single);
-        etMultipleAnswer = createTestView.findViewById(R.id.et_multiple);
-        etFreeTextAnswer = createTestView.findViewById(R.id.et_free);*/
-
-
         et_dateFrom = createTestView.findViewById(R.id.fromDateEditText);
         et_dateTo = createTestView.findViewById(R.id.toDateEditText);
-       // listViewQuestions = createTestView.findViewById(R.id.lv_questions);
 
         et_dateTo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,9 +135,6 @@ public class TeacherCreateTestFragment extends Fragment {
                 testHeader.userID = App.loggedUserId;
                 testHeader.fromDate = dateFrom;
                 testHeader.toDate = dateTo;
-               /* testHeader.gradeFreeTextAnswer = Long.parseLong(etFreeTextAnswer.getText().toString());
-                testHeader.gradeMultipleAnswer = Long.parseLong(etMultipleAnswer.getText().toString());
-                testHeader.gradeSingleAnswer = Long.parseLong(etSingleAnswer.getText().toString());*/
 
                 new CreateTestHeaderAsyncTask().execute(testHeader);
             }
@@ -164,27 +147,6 @@ public class TeacherCreateTestFragment extends Fragment {
             }
         });
 
-      /*  testQuestions = new ArrayList<>();
-        testQuestions.add("Kak си ?");
-        testQuestions.add("Какво правиш ?");
-        testQuestions.add("На колко си ?");*/
-
-        /*questionAdapter = new ArrayAdapter<String>(getContext(),R.layout.question_row,R.id.tv_question, testQuestions);
-        listViewQuestions.setAdapter(questionAdapter);*/
-        //sp_questionType = createTestView.findViewById(R.id.sp_question);
-    /*    sp_questionType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-               Intent intent = new Intent(getContext(),QuestionsPopupActivity.class);
-                startActivity(intent);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });*/
          new GetSubjectsAsyncTask().execute();
         return createTestView;
     }
@@ -270,8 +232,6 @@ public class TeacherCreateTestFragment extends Fragment {
 
     }
 }
-//TODO: ANOTHER HTTP GET HERE for the questions with the answers
-
     private  class CreateTestHeaderAsyncTask extends AsyncTask<TestHeader, Void, String> {
         ProgressDialog dialogCreateTest =
                 new ProgressDialog(getContext());
@@ -333,8 +293,6 @@ public class TeacherCreateTestFragment extends Fragment {
             super.onPostExecute(result);
             Log.d(TAG, "tes header: " + result);
             dialogCreateTest.dismiss();
-            TestHeader createdTestHeader = new GsonBuilder().create().fromJson(result, TestHeader.class);
-            long testId = createdTestHeader.id;
         }
     }
 

@@ -1,9 +1,7 @@
-package com.example.home.androidtestgame.student;
+package com.example.home.androidtestgame;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
-import com.example.home.androidtestgame.R;
 
 /**
  * Created by Home on 17.4.2018 г..

@@ -11,7 +11,7 @@ import com.example.home.androidtestgame.teacher.TeacherLogInActivity;
 
 import static com.example.home.androidtestgame.R.id.studentTeacherTabHost;
 
-public class tabHostActivity extends ActivityGroup {
+public class TabHostActivity extends ActivityGroup {
 
     TabHost teacherStudentHost;
 
