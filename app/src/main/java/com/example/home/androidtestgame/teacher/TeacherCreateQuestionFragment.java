@@ -77,7 +77,7 @@ public class TeacherCreateQuestionFragment extends Fragment {
                 registeredQuestion.questionTypeId = selectedQuestionTypeId;
                 registeredQuestion.testHeaderId = selectedtestHeaderId;
 
-                TeacherGiverAnswerToQuestionFragment fragment = TeacherGiverAnswerToQuestionFragment.newInstance(registeredQuestion);
+                TeacherGiveAnswerToQuestionFragment fragment = TeacherGiveAnswerToQuestionFragment.newInstance(registeredQuestion);
                 getFragmentManager().beginTransaction()
                         .replace(R.id.fillThisContainerWithFragment, fragment)
                         .commit();

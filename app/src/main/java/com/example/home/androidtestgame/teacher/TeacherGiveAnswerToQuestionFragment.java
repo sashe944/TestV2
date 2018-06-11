@@ -25,7 +25,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class TeacherGiverAnswerToQuestionFragment extends Fragment {
+public class TeacherGiveAnswerToQuestionFragment extends Fragment {
 
     private static final String TAG = "TeacherGiverAnswerToQue";
     private static final String EXTRA_KEY_QUESTION = "key_question";
@@ -34,16 +34,16 @@ public class TeacherGiverAnswerToQuestionFragment extends Fragment {
     CheckBox cbIsCorrect;
     private Question question;
 
-    public static TeacherGiverAnswerToQuestionFragment newInstance(Question question) {
-        TeacherGiverAnswerToQuestionFragment fragment = new TeacherGiverAnswerToQuestionFragment();
+    public static TeacherGiveAnswerToQuestionFragment newInstance(Question question) {
+        TeacherGiveAnswerToQuestionFragment fragment = new TeacherGiveAnswerToQuestionFragment();
         Bundle args = new Bundle();
         args.putParcelable(EXTRA_KEY_QUESTION, question);
         fragment.setArguments(args);
         return fragment;
     }
 
-    public TeacherGiverAnswerToQuestionFragment() {
-        // Required empty public constructor
+    public TeacherGiveAnswerToQuestionFragment() {
+
     }
 
 

@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:counterEnabled="true"
-                app:counterMaxLength="15">
+                app:counterMaxLength="30">
 
                 <EditText
                     android:id="@+id/et_teacher_name"

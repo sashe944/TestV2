@@ -8,6 +8,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -28,6 +29,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -39,7 +41,16 @@ public class RegisterActivity extends AppCompatActivity {
     String spinnerChoice, studentName, facultyNumber, studentPassword;
     RadioButton gender;
     RadioGroup studentSex;
-
+    private static final Pattern PASSWORD_PATTERN =
+            Pattern.compile("^" +
+                    //"(?=.*[0-9])" +         //at least 1 digit
+                    //"(?=.*[a-z])" +         //at least 1 lower case letter
+                    //"(?=.*[A-Z])" +         //at least 1 upper case letter
+                    "(?=.*[a-zA-Z])" +      //any letter
+                    "(?=.*[@#$%^&+=])" +    //at least 1 special character
+                    "(?=\\S+$)" +           //no white spaces
+                    ".{4,}" +               //at least 4 characters
+                    "$");
      private static final String TAG = "RegisterActivity";
 
     @Override
@@ -91,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Long Choice = Long.valueOf(spinnerChoice);
                 String Sex = gender.getText().toString();
 
-                if(!validateUsername() | !validatePassword() | validateFacultyNumber()){
+                if(!validateUsername() | !validatePassword() | !validateFacultyNumber()){
                     return;
                 }else{
                     new RegisterAsyncTask(FNumber,FullName,Pass,Choice,Sex).execute();
@@ -117,7 +128,7 @@ public class RegisterActivity extends AppCompatActivity {
         if(studentName.isEmpty()){
             Name.setError("Полето не може да бъде празно!");
             return false;
-        }else if(studentName.length()>15){
+        }else if(studentName.length()>30){
             Name.setError("Прекалено дълго име!");
             return false;
         }else{
@@ -129,14 +140,19 @@ public class RegisterActivity extends AppCompatActivity {
         if (studentPassword.isEmpty()) {
             Password.setError("Полето не може да бъде празно!");
             return false;
-        } else {
+        }
+        else if (!PASSWORD_PATTERN.matcher(studentPassword).matches()) {
+            Password.setError("Твърде лесна парола!");
+            return false;
+        }
+        else {
             Password.setError(null);
             return true;
         }
     }
     private boolean validateFacultyNumber() {
-        if (facultyNumber.equals(FNumber.getText().toString())) {
-            FNumber.setError("Вече има регистриран такъв факултетен номер!");
+        if (facultyNumber.isEmpty()) {
+            FNumber.setError("Полето е празно!");
             return false;
         } else {
             FNumber.setError(null);

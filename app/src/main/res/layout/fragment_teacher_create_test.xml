@@ -35,7 +35,7 @@
                 android:textAlignment="center"
                 android:textSize="18dp" />
             <Spinner
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/sp_disciplines" />
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/buttonstyleselector"
-                android:text="Добави въпрос" />
+                android:text="Добави тест" />
 
             <Button
                 android:textColor="#fff"

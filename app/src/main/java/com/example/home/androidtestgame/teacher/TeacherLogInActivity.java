@@ -55,7 +55,7 @@ public class TeacherLogInActivity extends AppCompatActivity {
         if(TeacherName.isEmpty()){
             teacherName.setError("Полето не може да бъде празно!");
             return false;
-        }else if(TeacherName.length()>15){
+        }else if(TeacherName.length()>30){
             teacherName.setError("Прекалено дълго име!");
             return false;
         }else{
