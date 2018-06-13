@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".student.LogInActivity" />
         <activity android:name=".student.RegisterActivity" />
-        <activity android:name=".student.StudentStatusActivity" />
+        <activity android:name=".StudentStatusActivity" />
         <activity android:name=".Viewing_Student_Results_Activity" />
         <activity
             android:name=".student.MenuActivity"
