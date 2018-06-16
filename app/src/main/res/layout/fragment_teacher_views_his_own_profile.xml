@@ -15,11 +15,10 @@
         app:srcCompat="@drawable/example_profile" />
 
     <TextView
-        android:id="@+id/textViewName"
+        android:id="@+id/tvTeacherName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="8"
-        android:text="Example Name"
         android:textSize="25dp" />
 
     <TextView
@@ -31,11 +30,10 @@
         android:textSize="14dp"/>
 
     <TextView
-        android:id="@+id/textViewEmail"
+        android:id="@+id/tvTeacherEmail"
         android:layout_width="match_parent"
         android:layout_height="22dp"
         android:layout_weight="5"
-        android:text="example@example.com"
         android:textSize="14dp" />
 
     <Button

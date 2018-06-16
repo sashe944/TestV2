@@ -3,6 +3,8 @@ package com.example.home.androidtestgame;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.home.androidtestgame.student.UpdateProfileFragment;
+
 public class UpdateProfileActivity extends AppCompatActivity {
 
     @Override

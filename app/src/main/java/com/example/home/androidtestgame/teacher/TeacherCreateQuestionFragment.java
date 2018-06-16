@@ -41,7 +41,7 @@ public class TeacherCreateQuestionFragment extends Fragment {
     private static final String TAG = "TeacherCreateQuestionFr";
 
     private long selectedQuestionTypeId = -1;
-    private long selectedtestHeaderId = -1;
+    private long selectedTestHeaderId = -1;
 
     EditText questionEditText;
 
@@ -75,7 +75,7 @@ public class TeacherCreateQuestionFragment extends Fragment {
                 Question registeredQuestion = new Question();
                 registeredQuestion.name = questionEditText.getText().toString();
                 registeredQuestion.questionTypeId = selectedQuestionTypeId;
-                registeredQuestion.testHeaderId = selectedtestHeaderId;
+                registeredQuestion.testHeaderId = selectedTestHeaderId;
 
                 TeacherGiveAnswerToQuestionFragment fragment = TeacherGiveAnswerToQuestionFragment.newInstance(registeredQuestion);
                 getFragmentManager().beginTransaction()
@@ -239,7 +239,7 @@ public class TeacherCreateQuestionFragment extends Fragment {
             testHeaderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    selectedtestHeaderId = testSubjects.get(position).id;
+                    selectedTestHeaderId = testSubjects.get(position).id;
                 }
 
                 @Override

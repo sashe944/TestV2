@@ -6,5 +6,5 @@ package com.example.home.androidtestgame.constants;
 
 public class Constants {
 
-    public static final String URL ="http://10.1.5.235:8080/TestV2Server/";
+    public static final String URL ="http://10.168.160.101:8080/TestV2Server/";
 }

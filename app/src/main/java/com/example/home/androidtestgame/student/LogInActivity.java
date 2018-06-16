@@ -10,8 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.home.androidtestgame.App;
 import com.example.home.androidtestgame.R;
 import com.example.home.androidtestgame.constants.Constants;
+import com.example.home.androidtestgame.objects.Teacher;
 import com.example.home.androidtestgame.objects.User;
 import com.google.gson.GsonBuilder;
 
@@ -132,8 +134,8 @@ public class LogInActivity extends AppCompatActivity {
                         url.openConnection();
                 urlConnection.setRequestMethod("POST");
                 User user = new User();
-                user.password = password.getText().toString();
-                user.facultyNumber = fNumber.getText().toString();
+                user.password = password.getText().toString().trim();
+                user.facultyNumber = fNumber.getText().toString().trim();
 
                 String creds = new GsonBuilder().create().toJson(user);
 
@@ -168,7 +170,7 @@ public class LogInActivity extends AppCompatActivity {
             Log.d(TAG, "taking data");
             super.onPostExecute(aVoid);
             dialogLogIn.dismiss();
-
+            App.loggedUserId =  new GsonBuilder().create().fromJson(result, User.class).id;
             Log.d(TAG, "result: " + result);
 
         }

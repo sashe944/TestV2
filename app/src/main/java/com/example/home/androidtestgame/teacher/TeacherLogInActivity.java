@@ -121,8 +121,8 @@ public class TeacherLogInActivity extends AppCompatActivity {
                 urlConnection.setRequestMethod("POST");
 
                Teacher teacher = new Teacher();
-                teacher.password =  teacherPassword.getText().toString();
-                teacher.name = teacherName.getText().toString();
+                teacher.password =  teacherPassword.getText().toString().trim();
+                teacher.name = teacherName.getText().toString().trim();
 
                 String creds = new GsonBuilder().create().toJson(teacher);
 

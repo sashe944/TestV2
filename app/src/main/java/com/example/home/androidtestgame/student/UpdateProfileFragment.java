@@ -1,4 +1,4 @@
-package com.example.home.androidtestgame;
+package com.example.home.androidtestgame.student;
 
 
 import android.app.ProgressDialog;
@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.home.androidtestgame.App;
+import com.example.home.androidtestgame.R;
 import com.example.home.androidtestgame.constants.Constants;
 import com.example.home.androidtestgame.objects.User;
 import com.example.home.androidtestgame.student.MenuActivity;
@@ -152,7 +154,7 @@ public class UpdateProfileFragment extends Fragment {
             BufferedReader br;
 
             try{
-                url = new URL(Constants.URL+"FindUserServlet" );
+                url = new URL(Constants.URL+"UserUpdateServlet" );
 
                 urlConnection = (HttpURLConnection) url.openConnection();
                 Log.d(TAG, "url: " + url.toString());

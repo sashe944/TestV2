@@ -86,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
         studentName = Name.getText().toString();
         facultyNumber = FNumber.getText().toString();
-        studentPassword = Password.getText().toString();
+        studentPassword = Password.getText().toString().trim();
         gender = findViewById(studentSex.getCheckedRadioButtonId());
 
         ok.setOnClickListener(new View.OnClickListener() {
@@ -202,8 +202,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                 urlConnection.setRequestMethod("POST");
                 User user = new User();
-                user.name = Name.getText().toString();
-                user.facultyNumber = FNumber.getText().toString();
+                user.name = Name.getText().toString().trim();
+                user.facultyNumber = FNumber.getText().toString().trim();
                 user.password = Password;
                 user.userTypeID = StudentChoice;
                 user.gender = Sex;
