@@ -5,6 +5,6 @@ package com.example.home.androidtestgame.objects;
  */
 
 public class Teacher {
-    public long id,teacherUserTypeID;
-    public String name, password, email, gender;
+    public int id;
+    public String name, password, email, gender,usertypeid;
 }

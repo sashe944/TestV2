@@ -1,6 +1,7 @@
 package com.example.home.androidtestgame.teacher;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -61,10 +62,12 @@ public class TeacherGiveAnswerToQuestionFragment extends Fragment {
         cbIsCorrect = answersView.findViewById(R.id.isCorrectAnswerCheckBox);
 
         answersView.findViewById(R.id.btn_save_question_with_all_answers).setOnClickListener(new View.OnClickListener() {
+            Intent intent = new Intent(getContext(),TeacherMenuActivity.class);
             @Override
             public void onClick(View v) {
                 getNewAnswerInfoFromUI();
                 new RegisterQuestionAsyncTask().execute(question);
+                startActivity(intent);
             }
         });
 

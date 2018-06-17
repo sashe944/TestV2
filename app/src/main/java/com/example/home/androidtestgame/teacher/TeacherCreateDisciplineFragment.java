@@ -62,7 +62,6 @@ public class TeacherCreateDisciplineFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(),TeacherMenuActivity.class);
-                //TODO:Save Disciplines
 
                 String disName = disciplineName.getText().toString();
                 String disDescription = disciplineDescription.getText().toString();

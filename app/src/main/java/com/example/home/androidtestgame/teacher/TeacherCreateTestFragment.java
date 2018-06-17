@@ -128,6 +128,7 @@ public class TeacherCreateTestFragment extends Fragment {
         saveTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getContext(),TeacherMenuActivity.class);
                 TestHeader testHeader = new TestHeader();
 
                 testHeader.testName = etTestName.getText().toString();
@@ -137,6 +138,7 @@ public class TeacherCreateTestFragment extends Fragment {
                 testHeader.toDate = dateTo;
 
                 new CreateTestHeaderAsyncTask().execute(testHeader);
+                startActivity(intent);
             }
         });
         cancelSavingTest.setOnClickListener(new View.OnClickListener() {

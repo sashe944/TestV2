@@ -6,5 +6,5 @@ package com.example.home.androidtestgame.objects;
 
 public class User {
     public long id,userTypeID;
-    public String facultyNumber,name,password,gender,email;
+    public String facultyNumber,name,password,gender;
 }

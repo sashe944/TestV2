@@ -41,6 +41,7 @@ public class TeacherViewsHisOwnProfileFragment extends Fragment {
 
     Button buttonGoBack;
     TextView teacherName,teacherEmail;
+    String name, email;
     private static final String TAG = "TeacherViewsHisOwnProfi";
 
     public TeacherViewsHisOwnProfileFragment() {
@@ -56,6 +57,9 @@ public class TeacherViewsHisOwnProfileFragment extends Fragment {
 
         teacherName = teacherProfileView.findViewById(R.id.tvTeacherName);
         teacherEmail = teacherProfileView.findViewById(R.id.tvTeacherEmail);
+
+        name = teacherName.getText().toString();
+        email = teacherEmail.getText().toString();
 
         buttonGoBack = teacherProfileView.findViewById(R.id.btn_back);
         buttonGoBack.setOnClickListener(new View.OnClickListener() {
@@ -84,15 +88,15 @@ public class TeacherViewsHisOwnProfileFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Log.d(TAG, "Login in....");
-            dialogLogIn.setTitle("Login in please wait!");
+            Log.d(TAG, "Checking profile....");
+            dialogLogIn.setTitle("Check profile, please wait!");
             dialogLogIn.setCanceledOnTouchOutside(false);
             dialogLogIn.show();
         }
 
         @Override
         protected Void doInBackground(Void... voids) {
-            Log.d(TAG, "Getting subjects from the server");
+            Log.d(TAG, "Getting teacher info from the server");
             URL url;
             HttpURLConnection urlConnection;
             BufferedReader br;
@@ -105,10 +109,6 @@ public class TeacherViewsHisOwnProfileFragment extends Fragment {
                         url.openConnection();
                 urlConnection.setRequestMethod("GET");
 
-               Teacher teacher = new Teacher();
-                teacher.id = App.loggedUserId;
-                teacherName.setText(teacher.name);
-                teacherEmail.setText(teacher.email);
 
                 br = new BufferedReader
                         (new InputStreamReader(
@@ -138,6 +138,11 @@ public class TeacherViewsHisOwnProfileFragment extends Fragment {
             Log.d(TAG, "result: " + result);
             super.onPostExecute(aVoid);
             dialogLogIn.dismiss();
+
+            Teacher teacher = new Teacher();
+            teacher.id = (int) App.loggedUserId;
+            teacher.name = name;
+           teacher.email = email;
         }
     }
 
