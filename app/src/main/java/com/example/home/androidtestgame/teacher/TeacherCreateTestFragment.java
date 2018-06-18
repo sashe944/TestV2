@@ -4,6 +4,7 @@ package com.example.home.androidtestgame.teacher;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
@@ -63,14 +64,12 @@ public class TeacherCreateTestFragment extends Fragment {
     public TeacherCreateTestFragment() {
 
     }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View createTestView = inflater.inflate(R.layout.fragment_teacher_create_test, container, false);
-
+        setRetainInstance(true);
         saveTest =createTestView.findViewById(R.id.btnSaveTest);
         cancelSavingTest = createTestView.findViewById(R.id.btnCancelTest);
 
@@ -166,8 +165,8 @@ public class TeacherCreateTestFragment extends Fragment {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        Log.d(TAG, "Login in....");
-        dialogLogIn.setTitle("Login in please wait!");
+        Log.d(TAG, "Geting subjects....");
+        dialogLogIn.setTitle("Getting all subjects, please wait!");
         dialogLogIn.setCanceledOnTouchOutside(false);
         dialogLogIn.show();
     }
@@ -238,6 +237,8 @@ public class TeacherCreateTestFragment extends Fragment {
         ProgressDialog dialogCreateTest =
                 new ProgressDialog(getContext());
 
+        String result;
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -287,7 +288,7 @@ public class TeacherCreateTestFragment extends Fragment {
             }catch(IOException e){
                 Log.wtf("WRONG!", e.getMessage());
             }
-            return null;
+            return result.toString();
         }
 
         @Override

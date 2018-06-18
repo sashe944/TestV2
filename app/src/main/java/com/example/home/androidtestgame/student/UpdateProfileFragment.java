@@ -55,6 +55,7 @@ public class UpdateProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View updateProfileView = inflater.inflate(R.layout.fragment_update_profile, container, false);
+        setRetainInstance(true);
 
         updateName = updateProfileView.findViewById(R.id.et_updateUsername);
         updatePassword = updateProfileView.findViewById(R.id.et_updatePassword);

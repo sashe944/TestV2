@@ -52,6 +52,7 @@ public class TeacherCreateDisciplineFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View disciplineView = inflater.inflate(R.layout.fragment_teacher_create_discipline, container, false);
+        setRetainInstance(true);
 
         ok = disciplineView.findViewById(R.id.btnAddDiscipline);
         back = disciplineView.findViewById(R.id.btnCancelDiscipline);

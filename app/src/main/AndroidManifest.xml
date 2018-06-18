@@ -21,7 +21,7 @@
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".student.TestActivity" />
-        <activity android:name=".teacher.TeacherLogInActivity" />
+        <activity android:name=".teacher.TeacherLogInActivity"/>
         <activity
             android:name=".teacher.TeacherMenuActivity"
             android:label="@string/title_activity_teacher_menu"

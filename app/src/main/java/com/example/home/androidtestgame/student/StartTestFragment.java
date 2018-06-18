@@ -52,6 +52,7 @@ public class StartTestFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View startTestView = inflater.inflate(R.layout.fragment_start_test, container, false);
+        setRetainInstance(true);
 
         lvStartTest = startTestView.findViewById(R.id.lv_choose_test);
         new GetTestsTask().execute();
