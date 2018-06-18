@@ -60,7 +60,6 @@ public class TeacherCreateQuestionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View questionView = inflater.inflate(R.layout.fragment_teacher_create_question, container, false);
-        setRetainInstance(true);
 
         saveQuestion = questionView.findViewById(R.id.btnSaveQuestion);
         questionTypeSpinner = questionView.findViewById(R.id.answersSpinner);

@@ -69,7 +69,6 @@ public class TeacherCreateTestFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View createTestView = inflater.inflate(R.layout.fragment_teacher_create_test, container, false);
-        setRetainInstance(true);
         saveTest =createTestView.findViewById(R.id.btnSaveTest);
         cancelSavingTest = createTestView.findViewById(R.id.btnCancelTest);
 
