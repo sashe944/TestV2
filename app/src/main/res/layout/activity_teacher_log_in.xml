@@ -43,7 +43,8 @@
                     android:layout_marginTop="10dp"
                     android:hint="Име"
                     android:inputType="text"
-                    android:textColorHint="#2c5aff" />
+                    android:textColorHint="#2c5aff"
+                    android:text="Йордан Тодоров"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -59,7 +60,8 @@
                     android:layout_marginTop="20dp"
                     android:hint="Парола"
                     android:inputType="textPassword"
-                    android:textColorHint="#2c5aff" />
+                    android:textColorHint="#2c5aff"
+                    android:text="123"/>
             </android.support.design.widget.TextInputLayout>
 
             <Button

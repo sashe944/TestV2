@@ -60,6 +60,7 @@ public class StartTestFragment extends Fragment {
         return startTestView;
     }
 
+    //TODO: HTTP GET TestHeader(DONE)
     private class GetTestsTask extends AsyncTask<Void, Void , Void> {
 
         ProgressDialog dialogLogIn =
@@ -70,8 +71,8 @@ public class StartTestFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Log.d(TAG, "Login in....");
-            dialogLogIn.setTitle("Login in please wait!");
+            Log.d(TAG, "Getting testHeader....");
+            dialogLogIn.setTitle("Getting testHeader, please wait!");
             dialogLogIn.setCanceledOnTouchOutside(false);
             dialogLogIn.show();
         }

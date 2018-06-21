@@ -27,16 +27,17 @@ import java.net.URL;
 
 public class LogInActivity extends AppCompatActivity {
 
-
-
     private static final String TAG = "LogInActivity";
 
     Button register;
     Button login;
+    String result;
 
 
     String studentPassword,studentFacultyNumber;
     EditText password,fNumber;
+
+    User user = new User();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +57,12 @@ public class LogInActivity extends AppCompatActivity {
         if(studentFacultyNumber.isEmpty()){
             fNumber.setError("Полето не може да бъде празно!");
             return false;
-        }else{
+        }
+      /*  if(!studentFacultyNumber.equals(user.facultyNumber)) {
+            fNumber.setError("Неправилни данни за влизане!");
+            return false;
+        }*/
+            else{
             fNumber.setError(null);
             return true;
         }
@@ -101,7 +107,7 @@ public class LogInActivity extends AppCompatActivity {
                 new ProgressDialog(LogInActivity.this);
         String Password;
         String stuFacultyNumber;
-        String result;
+
 
         public LoginAsyncTask(String stuFacultyNumber, String Password) {
 
@@ -133,7 +139,7 @@ public class LogInActivity extends AppCompatActivity {
                 urlConnection = (HttpURLConnection)
                         url.openConnection();
                 urlConnection.setRequestMethod("POST");
-                User user = new User();
+
                 user.password = password.getText().toString().trim();
                 user.facultyNumber = fNumber.getText().toString().trim();
 

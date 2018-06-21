@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,13 +61,19 @@ public class TeacherGiveGradeFragment extends Fragment {
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            TeacherGiveGradeFragment.ViewHolder mainViewHolder = null;
+            ViewHolder mainViewHolder = null;
             if(convertView==null){
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 convertView = inflater.inflate(layout,parent,false);
-                TeacherGiveGradeFragment.ViewHolder viewHolder = new TeacherGiveGradeFragment.ViewHolder();
+                ViewHolder viewHolder = new ViewHolder();
                 viewHolder.grade = convertView.findViewById(R.id.btnGrade);
                 viewHolder.look = convertView.findViewById(R.id.btnLook);
+                viewHolder.cbIsGradedTest = convertView.findViewById(R.id.cbIsGradedTest);
+              /*  if (!viewHolder.cbIsGradedTest.isChecked()) {
+                    Toast.makeText(getContext(),"not checked",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getContext(),"checked",Toast.LENGTH_LONG).show();
+                }*/
                 viewHolder.title = convertView.findViewById(R.id.discNameTextView);
                 viewHolder.title.setText(disciplineArrayList.get(0));
                 viewHolder.look.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +102,7 @@ public class TeacherGiveGradeFragment extends Fragment {
         Button look;
         Button grade;
         TextView title;
+        CheckBox cbIsGradedTest;
     }
 
 }

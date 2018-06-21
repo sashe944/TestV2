@@ -29,7 +29,7 @@ public class TestActivity extends AppCompatActivity {
 
         testHeaderId = getIntent().getExtras().getLong(EXTRA_HEADER_ID);
 
-        TestFragment testFragment = new TestFragment();
+        TestFragment testFragment = TestFragment.newInstance(testHeaderId);
         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.testContainer,testFragment);
         fragmentTransaction.commit();

@@ -42,6 +42,7 @@
                     android:layout_marginTop="20dp"
                     android:hint="Факултетен номер"
                     android:inputType="text"
+                    android:text="1701737014"
                     android:textColorHint="#2c5aff"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -56,6 +57,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:hint="Парола"
+                    android:text="123"
                     android:inputType="textPassword"
                     android:textColorHint="#2c5aff" />
 
