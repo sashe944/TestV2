@@ -165,7 +165,7 @@ public class TeacherCreateTestFragment extends Fragment {
     protected void onPreExecute() {
         super.onPreExecute();
         Log.d(TAG, "Geting subjects....");
-        dialogLogIn.setTitle("Getting all subjects, please wait!");
+        dialogLogIn.setTitle("Взимане на всички налични дисциплини, моля изчакайте...");
         dialogLogIn.setCanceledOnTouchOutside(false);
         dialogLogIn.show();
     }
@@ -242,7 +242,7 @@ public class TeacherCreateTestFragment extends Fragment {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(TAG, "Create test");
-            dialogCreateTest.setTitle("Create test, please wait!");
+            dialogCreateTest.setTitle("Създаване на теста, моля изчакайте...");
             dialogCreateTest.setCanceledOnTouchOutside(false);
             dialogCreateTest.show();
         }

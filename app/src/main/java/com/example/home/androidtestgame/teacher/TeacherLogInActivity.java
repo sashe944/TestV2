@@ -1,7 +1,9 @@
 package com.example.home.androidtestgame.teacher;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
@@ -16,6 +18,7 @@ import com.example.home.androidtestgame.App;
 import com.example.home.androidtestgame.R;
 import com.example.home.androidtestgame.constants.Constants;
 import com.example.home.androidtestgame.objects.Teacher;
+import com.example.home.androidtestgame.student.LogInActivity;
 import com.google.gson.GsonBuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -101,7 +104,7 @@ public class TeacherLogInActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(TAG, "Login in....");
-            dialogLogIn.setTitle("Login in, please wait!");
+            dialogLogIn.setTitle("Влизане в системата, моля изчакаите...");
             dialogLogIn.setCanceledOnTouchOutside(false);
             dialogLogIn.show();
         }
@@ -162,7 +165,20 @@ public class TeacherLogInActivity extends AppCompatActivity {
             Log.d(TAG, "result: " + result);
 
             if (TextUtils.isEmpty(result)) {
-                // show wrong credentials dialog
+
+                final AlertDialog.Builder adb = new AlertDialog.Builder(TeacherLogInActivity.this);
+                adb.setTitle("Предупреждение");
+                adb.setMessage("Ползвате неправилни данни!");
+                adb.setCancelable(false);
+                adb.setPositiveButton("Опитай отново",new DialogInterface.OnClickListener(){
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                AlertDialog alertDialog = adb.create();
+                alertDialog.show();
                 Log.d(TAG, "wrong credentials");
             } else {
                 Teacher teacher = new GsonBuilder().create().fromJson(result, Teacher.class);

@@ -99,7 +99,7 @@ public class TeacherCreateDisciplineFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            registerProgressDialog.setTitle("Registering subject! Please wait...!");
+            registerProgressDialog.setTitle("Регистриране на дисциплина, моля изчакайте...");
             registerProgressDialog.setCanceledOnTouchOutside(false);
             registerProgressDialog.show();
         }

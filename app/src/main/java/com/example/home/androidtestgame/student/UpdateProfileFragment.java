@@ -142,7 +142,7 @@ public class UpdateProfileFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            registerProgressDialog.setTitle("Updating the user! Please wait...!");
+            registerProgressDialog.setTitle("Промяна на данните за студента, моля изчакайте...");
             registerProgressDialog.setCanceledOnTouchOutside(false);
             registerProgressDialog.show();
         }

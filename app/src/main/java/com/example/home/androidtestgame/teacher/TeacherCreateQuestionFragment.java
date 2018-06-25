@@ -105,7 +105,7 @@ public class TeacherCreateQuestionFragment extends Fragment {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(TAG, "Login in....");
-            dialogLogIn.setTitle("Login in please wait!");
+            dialogLogIn.setTitle("Взимане типовете за въпросите, моля изчакайте...");
             dialogLogIn.setCanceledOnTouchOutside(false);
             dialogLogIn.show();
         }
@@ -183,7 +183,7 @@ public class TeacherCreateQuestionFragment extends Fragment {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(TAG, "Login in....");
-            dialogLogIn.setTitle("Login in please wait!");
+            dialogLogIn.setTitle("Взимане на дизциплините, моля изчакайте...");
             dialogLogIn.setCanceledOnTouchOutside(false);
             dialogLogIn.show();
         }

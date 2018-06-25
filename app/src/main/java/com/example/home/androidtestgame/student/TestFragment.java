@@ -119,14 +119,14 @@ public class TestFragment extends Fragment {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(TAG, "Getting questions....");
-            dialogLogIn.setTitle("Getting questions, please wait!");
+            dialogLogIn.setTitle("Взимане на въпроси, моля изчакайте...");
             dialogLogIn.setCanceledOnTouchOutside(false);
             dialogLogIn.show();
         }
 
         @Override
         protected String doInBackground(Long... params) {
-            Log.d(TAG, "Getting qustions from the server");
+            Log.d(TAG, "Getting questions from the server");
             URL url;
             HttpURLConnection urlConnection;
             BufferedReader br;
@@ -198,7 +198,7 @@ public class TestFragment extends Fragment {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(TAG, "Uploading answers....");
-            dialogLogIn.setTitle("Uploading answers, please wait!");
+            dialogLogIn.setTitle("Качване на отговори, моля изчакайте...");
             dialogLogIn.setCanceledOnTouchOutside(false);
             dialogLogIn.show();
         }
@@ -268,10 +268,6 @@ public class TestFragment extends Fragment {
             Log.d(TAG, "result: " + result);
             super.onPostExecute(result);
             dialogLogIn.dismiss();
-
-           /* final List<Question> questions = new GsonBuilder().create().fromJson(result, new TypeToken<List<Question>>(){}.getType());
-*/
-
         }
     }
 

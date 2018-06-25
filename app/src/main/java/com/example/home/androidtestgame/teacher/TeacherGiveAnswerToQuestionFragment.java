@@ -105,7 +105,7 @@ public class TeacherGiveAnswerToQuestionFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            registerProgressDialog.setTitle("Registering question! Please wait...!");
+            registerProgressDialog.setTitle("Създаване на отговори към въпросите за теста, моля изчакайте...");
             registerProgressDialog.setCanceledOnTouchOutside(false);
             registerProgressDialog.show();
         }

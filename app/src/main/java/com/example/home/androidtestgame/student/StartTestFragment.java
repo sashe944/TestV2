@@ -50,7 +50,7 @@ public class StartTestFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View startTestView = inflater.inflate(R.layout.fragment_start_test, container, false);
         setRetainInstance(true);
         lvStartTest = startTestView.findViewById(R.id.lv_choose_test);
@@ -70,7 +70,7 @@ public class StartTestFragment extends Fragment {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(TAG, "Getting testHeader....");
-            dialogLogIn.setTitle("Getting testHeader, please wait!");
+            dialogLogIn.setTitle("Взимане на тест, моля изчакайте...");
             dialogLogIn.setCanceledOnTouchOutside(false);
             dialogLogIn.show();
         }

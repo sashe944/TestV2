@@ -1,6 +1,9 @@
 package com.example.home.androidtestgame.student;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.home.androidtestgame.App;
 import com.example.home.androidtestgame.R;
@@ -116,7 +120,7 @@ public class LogInActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(TAG, "Login in....");
-            dialogLogIn.setTitle("Login in please wait!");
+            dialogLogIn.setTitle("Влизане в системата, моля изчакаите...");
             dialogLogIn.setCanceledOnTouchOutside(false);
             dialogLogIn.show();
         }
@@ -176,8 +180,19 @@ public class LogInActivity extends AppCompatActivity {
             Log.d(TAG, "result: " + result);
 
             if (TextUtils.isEmpty(result)) {
-                // show wrong credentials dialog
-                Log.d(TAG, "wrong credentials");
+                final AlertDialog.Builder adb = new AlertDialog.Builder(LogInActivity.this);
+                adb.setTitle("Предупреждение");
+                adb.setMessage("Ползвате неправилни данни!");
+                adb.setCancelable(false);
+                adb.setPositiveButton("Опитай отново",new DialogInterface.OnClickListener(){
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                AlertDialog alertDialog = adb.create();
+                alertDialog.show();
             } else {
                 User student = new GsonBuilder().create().fromJson(result, User.class);
                 App.loggedUserId =  student.id;
@@ -186,7 +201,6 @@ public class LogInActivity extends AppCompatActivity {
                 Intent intent = new Intent(LogInActivity.this, MenuActivity.class);
                 startActivity(intent);
             }
-
 
         }
     }

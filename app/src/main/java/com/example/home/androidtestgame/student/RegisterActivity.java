@@ -183,7 +183,7 @@ public class RegisterActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            registerProgressDialog.setTitle("Registering the user! Please wait...!");
+            registerProgressDialog.setTitle("Регистриране на студент, моля изчакайте...");
             registerProgressDialog.setCanceledOnTouchOutside(false);
             registerProgressDialog.show();
         }
