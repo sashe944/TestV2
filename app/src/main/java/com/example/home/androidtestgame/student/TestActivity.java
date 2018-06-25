@@ -11,14 +11,17 @@ import com.example.home.androidtestgame.R;
 public class TestActivity extends AppCompatActivity {
 
     private static final String EXTRA_HEADER_ID = "headerId";
+    private static final String EXTRA_HEADER_NAME = "headerName";
 
     Button give;
     private long testHeaderId;
+    private String testName;
 
 
-    public static void startTestActivity(Context context, long headerId) {
+    public static void startTestActivity(Context context, long headerId,String headerName) {
         Intent intent = new Intent(context, TestActivity.class);
         intent.putExtra(EXTRA_HEADER_ID, headerId);
+        intent.putExtra(EXTRA_HEADER_NAME,headerName);
         context.startActivity(intent);
     }
 
@@ -28,18 +31,11 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
 
         testHeaderId = getIntent().getExtras().getLong(EXTRA_HEADER_ID);
+        testName = getIntent().getExtras().getString(EXTRA_HEADER_NAME);
 
-        TestFragment testFragment = TestFragment.newInstance(testHeaderId);
+        TestFragment testFragment = TestFragment.newInstance(testHeaderId,testName);
         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.testContainer,testFragment);
         fragmentTransaction.commit();
     }
-
-   /* View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(TestActivity.this,MenuActivity.class);
-            startActivity(intent);
-        }
-    };*/
 }

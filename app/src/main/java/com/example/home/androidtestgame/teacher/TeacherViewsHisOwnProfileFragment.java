@@ -137,10 +137,8 @@ public class TeacherViewsHisOwnProfileFragment extends Fragment {
             super.onPostExecute(result);
             dialogLogIn.dismiss();
 
-            // get server response (teacher details)
             Teacher teacher = new GsonBuilder().create().fromJson(result, Teacher.class);
 
-            // populate teacher info on UI
             teacherName.setText(teacher.name);
             teacherEmail.setText(teacher.email);
 

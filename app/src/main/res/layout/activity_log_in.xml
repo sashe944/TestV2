@@ -62,6 +62,11 @@
                     android:textColorHint="#2c5aff" />
 
         </android.support.design.widget.TextInputLayout>
+            <TextView
+                android:id="@+id/tvCheck"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""/>
         <Button
                 android:id="@+id/btn_log_in"
                 android:layout_width="match_parent"

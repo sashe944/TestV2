@@ -7,12 +7,12 @@
     tools:context="com.example.home.androidtestgame.student.TestActivity">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvTestName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="ANDROID"
+        android:text=""
         android:textAlignment="center"
         android:textSize="35dp" />
 
@@ -24,6 +24,7 @@
 
     <Button
         android:id="@+id/buttonGiveToTeacher"
+        android:textColor="#FFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonstyleselector"

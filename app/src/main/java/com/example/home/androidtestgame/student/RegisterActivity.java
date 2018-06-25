@@ -205,7 +205,7 @@ public class RegisterActivity extends AppCompatActivity {
                 user.name = Name.getText().toString().trim();
                 user.facultyNumber = FNumber.getText().toString().trim();
                 user.password = Password;
-                user.userTypeID = StudentChoice;
+                user.userTypeID = Long.parseLong(String.valueOf(StudentChoice));
                 user.gender = Sex;
 
                 String credentials = new GsonBuilder().create().toJson(user);

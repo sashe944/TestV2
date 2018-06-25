@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -76,9 +77,7 @@ public class TeacherLogInActivity extends AppCompatActivity {
             if (!validateTeacherName() | !validatePassword()) {
                 return;
             }else{
-
                 new TeacherLoginAsyncTask(TeacherName,TeacherPassword).execute();
-
             }
         }
     };
@@ -91,7 +90,7 @@ public class TeacherLogInActivity extends AppCompatActivity {
         String password,name;
         String result;
 
-        public TeacherLoginAsyncTask(String name, String password) {
+        private TeacherLoginAsyncTask(String name, String password) {
 
             this.name = name;
             this.password = password;
@@ -160,11 +159,21 @@ public class TeacherLogInActivity extends AppCompatActivity {
             Log.d(TAG, "taking data");
             super.onPostExecute(aVoid);
             dialogLogIn.dismiss();
-            App.loggedUserId =  new GsonBuilder().create().fromJson(result, Teacher.class).id;
             Log.d(TAG, "result: " + result);
 
-            Intent intent = new Intent(TeacherLogInActivity.this, TeacherMenuActivity.class);
-            startActivity(intent);
+            if (TextUtils.isEmpty(result)) {
+                // show wrong credentials dialog
+                Log.d(TAG, "wrong credentials");
+            } else {
+                Teacher teacher = new GsonBuilder().create().fromJson(result, Teacher.class);
+                App.loggedUserId =  teacher.id;
+                App.userTypeId = teacher.usertypeid;
+
+                Intent intent = new Intent(TeacherLogInActivity.this, TeacherMenuActivity.class);
+                startActivity(intent);
+            }
+
+
         }
     }
 }

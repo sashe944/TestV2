@@ -13,7 +13,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.example.home.androidtestgame.App;
 import com.example.home.androidtestgame.R;
 import com.example.home.androidtestgame.constants.Constants;
 import com.example.home.androidtestgame.objects.Subject;
@@ -39,9 +41,7 @@ public class StartTestFragment extends Fragment {
 
     private static final String TAG = "StartTestFragment";
     private ArrayAdapter<TestHeader> testsAdapter;
-
     public StartTestFragment() {
-        // Required empty public constructor
     }
 
 
@@ -53,14 +53,12 @@ public class StartTestFragment extends Fragment {
         // Inflate the layout for this fragment
         View startTestView = inflater.inflate(R.layout.fragment_start_test, container, false);
         setRetainInstance(true);
-
         lvStartTest = startTestView.findViewById(R.id.lv_choose_test);
         new GetTestsTask().execute();
 
         return startTestView;
     }
 
-    //TODO: HTTP GET TestHeader(DONE)
     private class GetTestsTask extends AsyncTask<Void, Void , Void> {
 
         ProgressDialog dialogLogIn =
@@ -128,7 +126,8 @@ public class StartTestFragment extends Fragment {
             lvStartTest.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    TestActivity.startTestActivity(getContext(), testHeaders.get(position).id);
+                    TestActivity.startTestActivity(getContext(), testHeaders.get(position).id,testHeaders.get(position).testName);
+                   /* App.testName = testHeaders.get(position).testName;*/
                 }
             });
 

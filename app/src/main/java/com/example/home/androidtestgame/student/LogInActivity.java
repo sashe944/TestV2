@@ -5,15 +5,16 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.home.androidtestgame.App;
 import com.example.home.androidtestgame.R;
 import com.example.home.androidtestgame.constants.Constants;
-import com.example.home.androidtestgame.objects.Teacher;
 import com.example.home.androidtestgame.objects.User;
 import com.google.gson.GsonBuilder;
 
@@ -31,6 +32,7 @@ public class LogInActivity extends AppCompatActivity {
 
     Button register;
     Button login;
+    TextView checkUserType;
     String result;
 
 
@@ -46,6 +48,8 @@ public class LogInActivity extends AppCompatActivity {
 
         register = findViewById(R.id.btn_register);
         login = findViewById(R.id.btn_log_in);
+        checkUserType = findViewById(R.id.tvCheck);
+
 
         password = findViewById(R.id.et_student_password);
         fNumber = findViewById(R.id.et_fnumber);
@@ -58,10 +62,6 @@ public class LogInActivity extends AppCompatActivity {
             fNumber.setError("Полето не може да бъде празно!");
             return false;
         }
-      /*  if(!studentFacultyNumber.equals(user.facultyNumber)) {
-            fNumber.setError("Неправилни данни за влизане!");
-            return false;
-        }*/
             else{
             fNumber.setError(null);
             return true;
@@ -76,6 +76,7 @@ public class LogInActivity extends AppCompatActivity {
             return true;
         }
     }
+
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -92,10 +93,7 @@ public class LogInActivity extends AppCompatActivity {
                     return;
                 }
                 else{
-                    Intent intent = null;
-                    new LoginAsyncTask(studentFacultyNumber,studentPassword).execute();
-                    intent = new Intent(LogInActivity.this, MenuActivity.class);
-                    startActivity(intent);
+                   new LoginAsyncTask(studentFacultyNumber,studentPassword).execute();
                 }
             }
         }
@@ -110,7 +108,6 @@ public class LogInActivity extends AppCompatActivity {
 
 
         public LoginAsyncTask(String stuFacultyNumber, String Password) {
-
                 this.stuFacultyNumber = stuFacultyNumber;
                 this.Password = Password;
 
@@ -142,6 +139,7 @@ public class LogInActivity extends AppCompatActivity {
 
                 user.password = password.getText().toString().trim();
                 user.facultyNumber = fNumber.getText().toString().trim();
+                user.userTypeID = App.userTypeId;
 
                 String creds = new GsonBuilder().create().toJson(user);
 
@@ -170,14 +168,25 @@ public class LogInActivity extends AppCompatActivity {
             }
             return null;
         }
-
         @Override
         protected void onPostExecute(Void aVoid) {
             Log.d(TAG, "taking data");
             super.onPostExecute(aVoid);
             dialogLogIn.dismiss();
-            App.loggedUserId =  new GsonBuilder().create().fromJson(result, User.class).id;
             Log.d(TAG, "result: " + result);
+
+            if (TextUtils.isEmpty(result)) {
+                // show wrong credentials dialog
+                Log.d(TAG, "wrong credentials");
+            } else {
+                User student = new GsonBuilder().create().fromJson(result, User.class);
+                App.loggedUserId =  student.id;
+                App.userTypeId = student.userTypeID;
+
+                Intent intent = new Intent(LogInActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+
 
         }
     }
