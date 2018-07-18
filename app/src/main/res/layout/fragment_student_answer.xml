@@ -12,7 +12,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="32dp"
-        android:text="Име на студент"
+        android:text="@string/lblStudentName"
         android:textSize="18dp" />
 
     <TextView
@@ -23,7 +23,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="78dp"
-        android:text="№"
+        android:text="@string/lblNumber"
         android:textSize="18dp" />
 
     <EditText
@@ -45,7 +45,7 @@
         android:layout_below="@+id/et_view_student_answer"
         android:layout_marginTop="82dp"
         android:inputType="textMultiLine"
-        android:hint="Коментар" />
+        android:hint="@string/hintComment" />
 
 
     <EditText
@@ -57,7 +57,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:inputType="textMultiLine"
-        android:hint="Точки" />
+        android:hint="@string/hintPoints" />
 
 
 </RelativeLayout>

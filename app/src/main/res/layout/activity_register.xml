@@ -23,8 +23,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="114dp"
                 android:layout_gravity="center"
-                android:text="Регистрация"
-                android:textColor="#2c5aff"
+                android:text="@string/lblRegister"
+                android:textColor="@color/blue"
                 android:layout_marginTop="50dp"
                 android:textAlignment="center"
                 android:textSize="50dp" />
@@ -43,9 +43,9 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
-                    android:hint="Име"
+                    android:hint="@string/hintName"
                     android:inputType="text"
-                    android:textColorHint="#2c5aff" />
+                    android:textColorHint="@color/blue" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -62,9 +62,9 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="5dp"
-                    android:hint="Факултетен номер"
+                    android:hint="@string/hintFacultyNumber"
                     android:inputType="text"
-                    android:textColorHint="#2c5aff" />
+                    android:textColorHint="@color/blue" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -80,9 +80,9 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="5dp"
-                    android:hint="Парола"
+                    android:hint="@string/hintPassword"
                     android:inputType="textPassword"
-                    android:textColorHint="#2c5aff" />
+                    android:textColorHint="@color/blue" />
             </android.support.design.widget.TextInputLayout>
 
             <TextView
@@ -90,15 +90,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Избери"
+                android:text="@string/txtChoose"
                 android:textAlignment="center"
                 android:textSize="18dp" />
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -110,6 +104,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/sp_typeSpinner"/>
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hintGender"
+                android:textAlignment="center"
+                android:textSize="18dp" />
 
             <RadioGroup
                 android:id="@+id/genderRadioGroup"
@@ -124,14 +127,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Мъж" />
+                    android:text="@string/txtMale" />
 
                 <RadioButton
                     android:id="@+id/rb_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="false"
-                    android:text="Жена" />
+                    android:text="@string/txtFemale" />
             </RadioGroup>
             <Button
                 android:id="@+id/btn_ok"
@@ -139,8 +142,8 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="220dp"
                 android:background="@drawable/buttonstyleselector"
-                android:text="OK"
-                android:textColor="#fff" />
+                android:text="@string/btnOk"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn_cancel"
@@ -148,8 +151,8 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/buttonstyleselector"
-                android:text="Изход"
-                android:textColor="#fff" />
+                android:text="@string/btnExit"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 

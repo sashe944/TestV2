@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="5"
-        android:text="Лектор"
+        android:text="@string/lblTeacherPosition"
         android:textSize="14dp"/>
 
     <TextView
@@ -41,9 +41,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="5"
-        android:text="Обратно"
+        android:text="@string/btnBack"
         android:textAlignment="center"
-        android:textColor="#fff"
+        android:textColor="@color/white"
         android:background="@drawable/buttonstyleselector"/>
 </LinearLayout>
 

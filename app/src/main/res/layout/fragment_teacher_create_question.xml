@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Добави текст за  въпрос"
+            android:text="@string/lblQuestionText"
             android:textSize="18sp" />
 
         <EditText
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Избиране на типа на въпроса"
+            android:text="@string/lblQuestionType"
             android:textSize="18sp" />
 
         <Spinner
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Избиране на дисциплина"
+            android:text="@string/lblChooseSubject"
             android:textSize="18sp" />
 
         <Spinner
@@ -61,13 +61,13 @@
         android:orientation="horizontal">
 
         <Button
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:id="@+id/btnSaveQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/buttonstyleselector"
-            android:text="Запази" />
+            android:text="@string/lblButtonText" />
 
     </LinearLayout>
 </LinearLayout>

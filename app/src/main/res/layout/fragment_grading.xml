@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:layout_weight="1"
-            android:text="Оценка"
+            android:text="@string/hintGrade"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -32,7 +32,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Име"
+            android:text="@string/lblName"
             android:textSize="18sp" />
 
         <CheckBox
@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Оцени"
+            android:text="@string/btnGrade"
             android:textSize="14sp" />
 
         <Button
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Виж"
+            android:text="@string/btnLook"
             android:textSize="14sp" />
     </LinearLayout>
 </LinearLayout>

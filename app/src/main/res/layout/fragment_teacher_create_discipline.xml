@@ -12,14 +12,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="center_horizontal"
-        android:hint="Име на дисциплината"
+        android:hint="@string/hintSubjectName"
         android:inputType="textPersonName" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Описание"
+        android:text="@string/lblDescription"
         android:textSize="18sp" />
 
     <EditText
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/buttonstyleselector"
             android:layout_weight="1"
-            android:text="Добави" />
+            android:text="@string/btnAdd" />
 
         <Button
             android:textColor="#fff"
@@ -51,6 +51,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/buttonstyleselector"
             android:layout_weight="1"
-            android:text="Назад" />
+            android:text="@string/btnBack" />
     </LinearLayout>
 </LinearLayout>

@@ -25,13 +25,13 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center_horizontal"
-                android:hint="Име на тест"
+                android:hint="@string/hintTestName"
                 android:inputType="textPersonName" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Дисциплина"
+                android:hint="@string/hintSubject"
                 android:textAlignment="center"
                 android:textSize="18dp" />
             <Spinner
@@ -72,22 +72,22 @@
             android:orientation="horizontal">
 
             <Button
-                android:textColor="#fff"
+                android:textColor="@color/white"
                 android:id="@+id/btnSaveTest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/buttonstyleselector"
-                android:text="Добави тест" />
+                android:text="@string/btnAddTest" />
 
             <Button
-                android:textColor="#fff"
+                android:textColor="@color/white"
                 android:id="@+id/btnCancelTest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/buttonstyleselector"
-                android:text="Назад" />
+                android:text="@string/btnBack" />
         </LinearLayout>
 
     </LinearLayout>

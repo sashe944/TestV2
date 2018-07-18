@@ -41,10 +41,10 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:hint="Име"
+                    android:hint="@string/hintName"
                     android:inputType="text"
                     android:textColorHint="#2c5aff"
-                    android:text="Йордан Тодоров"/>
+                    android:text="@string/txtName"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -58,10 +58,10 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:hint="Парола"
+                    android:hint="@string/hintPassword"
                     android:inputType="textPassword"
                     android:textColorHint="#2c5aff"
-                    android:text="123"/>
+                    android:text="@string/txtPassword"/>
             </android.support.design.widget.TextInputLayout>
 
             <Button

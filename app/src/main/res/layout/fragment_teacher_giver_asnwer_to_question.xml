@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Добави отговор за въпрос"
+            android:text="@string/lblQuestionAnswer"
             android:textSize="18sp" />
 
         <EditText
@@ -32,13 +32,13 @@
             android:id="@+id/isCorrectAnswerCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Правилен ли е ?" />
+            android:text="@string/lblIsCorrect" />
 
         <EditText
             android:id="@+id/pointsEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="добави точки за този отговор"/>
+            android:hint="@string/hintAddPints"/>
 
     </LinearLayout>
 

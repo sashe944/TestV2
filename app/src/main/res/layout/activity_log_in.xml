@@ -25,9 +25,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="167dp"
                 android:layout_gravity="center"
-                android:text="Влизане на студент"
+                android:text="@string/lblLogin"
                 android:textAlignment="center"
-                android:textColor="#2c5aff"
+                android:textColor="@color/blue"
                 android:textSize="50dp" />
 
             <android.support.design.widget.TextInputLayout
@@ -40,10 +40,10 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:hint="Факултетен номер"
+                    android:hint="@string/hintFacultyNumber"
                     android:inputType="text"
-                    android:text="1701737014"
-                    android:textColorHint="#2c5aff"/>
+                    android:text="@string/txtFacultyNumber"
+                    android:textColorHint="@color/blue"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -56,10 +56,10 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:hint="Парола"
-                    android:text="123"
+                    android:hint="@string/hintPassword"
+                    android:text="@string/txtPassword"
                     android:inputType="textPassword"
-                    android:textColorHint="#2c5aff" />
+                    android:textColorHint="@color/blue" />
 
         </android.support.design.widget.TextInputLayout>
             <TextView
@@ -73,8 +73,8 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="160dp"
                 android:background="@drawable/buttonstyleselector"
-                android:text="Влез"
-                android:textColor="#fff" />
+                android:text="@string/btnLogin"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn_register"
@@ -82,7 +82,7 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonstyleselector"
-                android:text="Регистрация"
+                android:text="@string/btnRegister"
                 android:textColor="#fff" />
 
         </LinearLayout>

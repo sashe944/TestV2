@@ -13,21 +13,50 @@
     <string-array name="toDate">
         <item>15.02.2005</item>
     </string-array>
-    <string-array name="discipline">
-        <item>Android</item>
-    </string-array>
-    <string-array name="questions">
-        <item>Въпрос с единичен правилен отговор</item>
-        <item>Въпрос с множествен правилен отговор</item>
-        <item>Въпрос със свободен текстов отговор</item>
-    </string-array>
-    <string-array name="answers">
-        <item>1 верен-1т.</item>
-        <item>Повече верни-2т.</item>
-        <item>Отворен отговор-5т.</item>
-    </string-array>
     <string name="title_activity_teacher_menu">TeacherMenuActivity</string>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Login and Register activity string resources -->
+    <string name="txtFacultyNumber">1701737014</string>
+    <string name="btnLogin">Влез</string>
+    <string name="btnRegister">Регистрация</string>
+    <string name="lblRegister">Регистрация</string>
+    <string name="hintName">Име</string>
+    <string name="hintFacultyNumber">Факултетен номер</string>
+    <string name="hintPassword">Парола</string>
+    <string name="hintGender">Пол</string>
+    <string name="lblLogin">Влизане на студент</string>
+    <string name="txtPassword">123</string>
+    <string name="txtChoose">Избери</string>
+    <string name="txtMale">Мъж</string>
+    <string name="txtFemale">Жена</string>
+    <string name="btnOk">OK</string>
+    <string name="btnExit">Изход</string>
+    <string name="txtName">Йордан Тодоров</string>
+    <string name="hintGrade">Оценка</string>
+    <string name="btnGrade">Оцени</string>
+    <string name="btnLook">Виж</string>
+    <string name="lblName">Име</string>
+    <string name="lblStudentName">Име на студент</string>
+    <string name="lblNumber">№</string>
+    <string name="hintComment">Коментар</string>
+    <string name="hintPoints">Точки</string>
+    <string name="lblPassedTests">Взети тестове: 10</string>
+    <string name="lblAwaitingTests">Очакващи оценки: 1</string>
+    <string name="hintSubjectName">Име на дисциплината</string>
+    <string name="btnAdd">Добави</string>
+    <string name="btnBack">Назад</string>
+    <string name="lblDescription">Описание</string>
+    <string name="lblQuestionText">Добави текст за въпрос</string>
+    <string name="lblQuestionType">Избиране на типа на въпроса</string>
+    <string name="lblChooseSubject">Избиране на дисциплина</string>
+    <string name="lblButtonText">Запази</string>
+    <string name="hintTestName">Име на тест</string>
+    <string name="hintSubject">Дисциплина</string>
+    <string name="btnAddTest">Добави тест</string>
+    <string name="lblQuestionAnswer">Добави отговор за въпрос</string>
+    <string name="lblIsCorrect">Правилен ли е ?</string>
+    <string name="hintAddPints">добави точки за този отговор</string>
+    <string name="lblTeacherPosition">Лектор</string>
+    <string name="lblUpdateStudentProfile">Промяна на данните</string>
 </resources>
