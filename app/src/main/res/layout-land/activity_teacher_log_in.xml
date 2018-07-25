@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -10,15 +11,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="10dp">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="167dp"
+                android:layout_height="94dp"
                 android:layout_gravity="center"
-                android:text="@string/lblLogin"
+                android:text="Влизане на преподавател"
                 android:textAlignment="center"
                 android:textColor="@color/blue"
                 android:textSize="50dp" />
@@ -27,51 +27,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/et_fnumber"
+                <EditText
+                    android:id="@+id/et_teacher_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:hint="@string/hintFacultyNumber"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/hintName"
                     android:inputType="text"
-                    android:text="@string/txtFacultyNumber"
-                    android:textColorHint="@color/blue"/>
+                    android:textColorHint="@color/blue"
+                    android:text="@string/txtName"/>
+
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/et_student_password"
+                <EditText
+                    android:id="@+id/et_teacher_password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:hint="@string/hintPassword"
-                    android:text="@string/txtPassword"
                     android:inputType="textPassword"
-                    android:textColorHint="@color/blue" />
+                    android:textColorHint="#2c5aff"
+                    android:text="@string/txtPassword"/>
+            </android.support.design.widget.TextInputLayout>
 
-        </android.support.design.widget.TextInputLayout>
-
-        <Button
-            android:layout_marginTop="10dp"
-                android:id="@+id/btn_log_in"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/buttonstyleselector"
-                android:text="@string/btnLogin"
-                android:textColor="@color/white" />
             <Button
-                android:id="@+id/btn_register"
+                android:id="@+id/btn_log_in"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonstyleselector"
-                android:text="@string/btnRegister"
-                android:textColor="#fff" />
+                android:text="@string/btnLogin"
+                android:textColor="@color/white" />
 
         </LinearLayout>
+
     </RelativeLayout>

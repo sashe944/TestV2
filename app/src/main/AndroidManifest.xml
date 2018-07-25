@@ -26,12 +26,6 @@
             android:name=".teacher.TeacherMenuActivity"
             android:label="@string/title_activity_teacher_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".AnswerPopupActivity"
-            android:theme="@style/AppTheme.CustomTheme" />
-        <activity
-            android:name=".QuestionsPopupActivity"
-            android:theme="@style/AppTheme.CustomTheme" />
         <activity android:name=".TeacherGradeStudentsAnswerActivity" />
         <activity android:name=".TeacherViewTestResultsActivity" />
         <activity android:name=".tabHost.TabHostActivity">

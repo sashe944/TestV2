@@ -52,7 +52,7 @@ public class LogInActivity extends AppCompatActivity {
 
         register = findViewById(R.id.btn_register);
         login = findViewById(R.id.btn_log_in);
-        checkUserType = findViewById(R.id.tvCheck);
+/*        checkUserType = findViewById(R.id.tvCheck);*/
 
 
         password = findViewById(R.id.et_student_password);
